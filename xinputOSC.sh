@@ -9,4 +9,4 @@ do
     sleep 1
     XID=$(xinput list --id-only 'NTRG0001:01 1B96:1B05 Pen Pen (0)')
 done
-/home/psc/11h11/xinputOSC/src/xinput test $XID
+/home/psc/11h11/thereminacrayon/xinputOSC/xinputOSC test $XID

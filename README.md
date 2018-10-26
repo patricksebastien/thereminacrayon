@@ -31,6 +31,12 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - sudo apt install xdotool
 - autostart everything via tac.sh
 
+## XINPUTOSC
+
+I modified xinput source to add liblo for sending x11 event to pd (via OSC). The modification are located in test.c - right now hardcoded for surface pro 3 pen. It is possible also to send the windows button on the surface (Surface Pro 3/4 Buttons).
+
+xinputOSC.sh wait for the pen to be listed in xinput and then launch the custom xinputOSC binary (xinputOSC test deviceID).
+
 ## PD TRICKS
 
 - [declare -path ./]
