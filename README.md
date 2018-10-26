@@ -16,21 +16,25 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - control gimp from pd using osc (hacking gimp) or use xdotool?
 - pd sampler (mtl) doesnt work, try with pd048 or simply use .coll text file
 
---BUG--
-slicejockey external crash pd...
-
---GUIDE--
-install ubuntu-studio
-sudoers nopasswd
-compile pd with jack
-sudo pip install cython
-sudo apt install pip
-sudo apt install easystroke
-setup easystroke (ie: python easystroke_2osc.py 5904 /fx volume 3)
-flatpak gimp install
-sudo apt install touchegg
-sudo apt install xdotool
 
 
---PD TRICKS--
-[declare -path ./]
+## GUIDE
+- install ubuntu-studio
+- sudoers nopasswd
+- compile pd with jack
+- sudo pip install cython
+- sudo apt install pip
+- sudo apt install easystroke
+- setup easystroke (ie: python easystroke_2osc.py 5904 /fx volume 3)
+- flatpak gimp install
+- sudo apt install touchegg
+- sudo apt install xdotool
+- autostart everything via tac.sh
+
+## PD TRICKS
+
+- [declare -path ./]
+
+## BUG
+
+- slicejockey external crash pd...
