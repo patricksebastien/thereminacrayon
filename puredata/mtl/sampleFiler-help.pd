@@ -1,0 +1,88 @@
+#N canvas 720 309 930 661 10;
+#X declare -lib cyclone;
+#X declare -lib tof;
+#X declare -lib iemlib1;
+#X declare -lib zexy;
+#X declare -lib iemlib2;
+#X obj 24 126 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 22 22 description: Loads and stores soundfiles.;
+#X obj 23 623 mtl/out~;
+#X msg 78 284 0;
+#X msg 111 284 1;
+#X msg 145 285 2;
+#X obj 74 259 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X text 97 260 bang: outputs the last loaded soundfile;
+#X text 181 281 float: outputs the previously loaded soundfile at that
+index;
+#X obj 149 512 cyclone/prepend set;
+#X obj 538 113 bng 15 250 50 0 empty empty save 17 7 0 10 -262144 -1
+-1;
+#X obj 613 130 bng 15 250 50 0 empty empty load 17 7 0 10 -262144 -1
+-1;
+#X obj 24 148 openpanel;
+#X msg 24 173 add \$1;
+#X obj 46 204 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 46 223 openpanel;
+#X obj 24 587 mtl/player~;
+#X obj 481 20 cnv 15 350 80 empty empty empty 20 12 0 14 -232576 -66577
+0;
+#X text 484 43 The list of loaded soundfiles can be saved and restored
+through the param system.;
+#X obj 538 154 tof/param file;
+#X text 104 222 "symbol": add the soundfile and output its data.;
+#X obj 234 347 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 234 366 openpanel;
+#X msg 253 388 2;
+#X text 301 365 Inlet 2 will only output the soundfile data if it is
+already loaded. It will not load anything.;
+#X msg 187 315 dump;
+#X text 224 315 dump: dumps the contents out of the 5h outlet;
+#X obj 194 437 print dump;
+#X msg 149 545 sample 13054 44100 0-1006/0 1-1006/0 2 /home/khadas/Downloads/26880__vexst__closed-hi-hat-2.wav
+;
+#X obj 24 386 mtl/sampleFiler /id sfi-help;
+#X text 23 38 tags: tables samples file~;
+#X text 23 58 [sampleFiler] can store and refer to an unlimited number
+of loaded soundfiles.;
+#X text 22 92 [sampleFiler] loads a soundfile once and keep it in memory.
+;
+#X text 78 165 "add" soundfile: adds the indicated soundfile without
+outputing the sample.;
+#X obj 26 504 t b a;
+#X floatatom 189 476 5 0 0 0 - - -, f 5;
+#X text 303 510 Outlet 1: sample length samplerate table-left table-right
+channels name;
+#X obj 701 144 declare -lib cyclone;
+#X obj 701 203 declare -lib tof;
+#X obj 701 174 declare -lib iemlib1;
+#X obj 674 274 peakenv~;
+#X obj 709 233 declare -lib zexy;
+#X obj 718 321 declare -lib iemlib2;
+#X connect 0 0 12 0;
+#X connect 3 0 29 0;
+#X connect 4 0 29 0;
+#X connect 5 0 29 0;
+#X connect 6 0 29 0;
+#X connect 9 0 28 0;
+#X connect 10 0 19 0;
+#X connect 11 0 19 1;
+#X connect 12 0 13 0;
+#X connect 13 0 29 0;
+#X connect 14 0 15 0;
+#X connect 15 0 29 0;
+#X connect 16 0 2 0;
+#X connect 16 1 2 1;
+#X connect 21 0 22 0;
+#X connect 22 0 29 1;
+#X connect 23 0 29 1;
+#X connect 25 0 29 0;
+#X connect 29 0 9 0;
+#X connect 29 0 34 0;
+#X connect 29 1 35 0;
+#X connect 29 2 27 0;
+#X connect 34 0 16 0;
+#X connect 34 1 16 0;

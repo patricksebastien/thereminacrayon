@@ -1,0 +1,22 @@
+#N canvas 1 82 1351 661 10;
+#X obj 8 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -24198 -1 -1
+;
+#X text 33 92 <- play it;
+#X text 8 -2 Author: Roman Haefeli;
+#X text 8 19 Version: 2008-03-05;
+#X text 7 33 Description: an emulation of the kickdrum from the fancy
+tr808 beatmachine;
+#X obj 5 166 mtl/out~;
+#X text 8 60 tags: synthesize~;
+#X obj 369 101 cnv 15 200 20 empty empty /kick_808/ 2 12 0 8 -258401
+-262144 0;
+#X obj 372 166 hsl 128 15 0 127 0 0 /kick808/click /kick808/click_
+click 137 7 0 10 -262144 -1 -1 10000 1;
+#X obj 372 130 hsl 128 15 0 127 0 0 /kick808/gain /kick808/gain_ gain
+137 7 0 10 -262144 -1 -1 10000 1;
+#X obj 372 148 hsl 128 15 0 127 0 0 /kick808/decay /kick808/decay_
+decay 137 7 0 10 -262144 -1 -1 10000 1;
+#X obj 8 118 mtl/kick808~ /id kick808 100 100 100;
+#X connect 0 0 11 0;
+#X connect 11 0 5 0;
+#X connect 11 0 5 1;

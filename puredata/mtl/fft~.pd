@@ -1,0 +1,172 @@
+#N canvas 1 82 1351 661 10;
+#N canvas 0 82 1366 662 ARGO 1;
+#X obj 100 102 cnv 10 164 34 empty ColorForm FFT-Flt 100 9 1 14 -188398
+-1 1.04858e+06;
+#X obj 101 131 cnv 4 10 4 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 101 101 cnv 4 10 4 empty empty empty 20 12 0 14 -1 -66577 0
+;
+#X obj 103 118 hsl 161 12 1 10000 1 1 \$0-A ColorTime 2 0 7 1 9 -208064
+-1 -1 1900 0;
+#X msg 10 157 label \$1;
+#X obj 87 55 inlet~;
+#X obj 86 190 outlet~;
+#X obj 322 170 cnv 15 41 30 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#N canvas 0 82 1366 662 ?? 1;
+#X obj -9 10 cnv 18 300 70 empty empty ARGOPdMiniModules 1 10 1 14
+-4033 -1 1.04858e+06;
+#X obj 9 29 cnv 10 10 10 empty empty Gerard 0 5 1 9 -4033 -1 1.04858e+06
+;
+#X obj 40 29 cnv 10 10 10 empty empty Paresys 0 5 1 9 -4033 -1 1.04858e+06
+;
+#X text -8 42 http://pagesperso-orange.fr/Paresys/ARGOPd/;
+#X text -9 59 http://gerard.paresys.free.fr/ARGOPd/;
+#X restore 326 177 pd ??;
+#X obj 13 -37 cnv 15 360 70 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#X obj 11 56 cnv 15 60 30 empty empty empty 20 12 0 14 -24198 -66577
+0;
+#N canvas 397 115 413 273 Help 0;
+#X obj 4 35 cnv 15 400 200 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#X text 8 37 Citation;
+#X text 83 196 IEM KUG;
+#X text 67 184 musil;
+#X text 97 184 @;
+#X text 103 184 iem.at;
+#X text 66 206 Graz \, Austria;
+#X text 18 173 (c) Thomas Musil 2000 - 2006;
+#X text 63 138 NAME iem_spec2;
+#X text 20 151 DESCRIPTION special spectral processing objects;
+#X text 19 54 iem_spec2/spec2_1p1z_freq~;
+#X text 22 106 iem_spec2 calculates only blocksize/2 + 1 samples of
+block;
+#X text 20 70 filter the spectrum with a 1p1z-IIR filter;
+#X text 21 81 first time from the left to right;
+#X text 21 93 second time from the right to left;
+#X text 9 11 FFT-Flt;
+#X restore 18 62 pd Help;
+#N canvas 1 82 1351 661 FFT-Flt 0;
+#X obj -43 61 *~;
+#X obj -43 15 inlet~;
+#X obj -43 339 *~;
+#X obj -43 388 outlet~;
+#X obj 15 16 tabreceive~ \$0-hann;
+#X obj -43 363 *~;
+#X text -15 363 Normalize;
+#X obj 268 339 switch~ 1024 4 1;
+#X msg 394 281 0;
+#X msg 256 280 1;
+#X text 250 1 64..65536;
+#X obj 258 16 r \$0-FFTSize;
+#X obj 271 203 /;
+#X obj 257 138 t b b f f f b;
+#X obj 360 18 r \$0-FFTOverlap;
+#X text 351 0 1 2 4 8;
+#X obj 315 236 pack 1 2;
+#X msg 287 280 set \$1 \$2 1;
+#X obj 345 138 t b b f b;
+#X obj 141 -6 inlet;
+#X msg 182 83 1 0 0;
+#X msg 181 17 0.1 0 0.9;
+#X msg 181 39 0.3 0 0.7;
+#X msg 181 61 0.5 0 0.5;
+#X obj -11 290 *~;
+#X obj -44 291 *~;
+#X obj -43 85 rfft~;
+#X obj 39 134 *~;
+#X obj -44 314 rifft~;
+#X obj 5 134 *~;
+#X obj 5 157 +~;
+#X obj 6 259 clip~;
+#X text 65 134 squared magnitude;
+#X text -1 85 outputs complex amplitudes;
+#X obj 5 207 rsqrt~;
+#X obj 33 230 / 10;
+#X obj 5 182 iem_spec2/spec2_1p1z_freq~ 0.1 0 0.9;
+#X msg 262 171 10;
+#X connect 0 0 26 0;
+#X connect 1 0 0 0;
+#X connect 2 0 5 0;
+#X connect 4 0 0 1;
+#X connect 4 0 2 1;
+#X connect 5 0 3 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X connect 11 0 13 0;
+#X connect 12 0 5 1;
+#X connect 13 0 9 0;
+#X connect 13 1 37 0;
+#X connect 13 2 12 1;
+#X connect 13 4 16 0;
+#X connect 13 5 8 0;
+#X connect 14 0 18 0;
+#X connect 16 0 17 0;
+#X connect 17 0 7 0;
+#X connect 18 0 9 0;
+#X connect 18 1 16 0;
+#X connect 18 2 16 1;
+#X connect 18 3 8 0;
+#X connect 19 0 35 0;
+#X connect 20 0 36 0;
+#X connect 21 0 36 0;
+#X connect 22 0 36 0;
+#X connect 23 0 36 0;
+#X connect 24 0 28 1;
+#X connect 25 0 28 0;
+#X connect 26 0 29 0;
+#X connect 26 0 29 1;
+#X connect 26 0 25 0;
+#X connect 26 1 27 0;
+#X connect 26 1 27 1;
+#X connect 26 1 24 0;
+#X connect 27 0 30 1;
+#X connect 28 0 2 0;
+#X connect 29 0 30 0;
+#X connect 30 0 36 0;
+#X connect 31 0 25 1;
+#X connect 31 0 24 1;
+#X connect 34 0 31 0;
+#X connect 35 0 31 2;
+#X connect 36 0 34 0;
+#X connect 37 0 12 0;
+#X restore 86 157 pd FFT-Flt;
+#X text 271 110 8 6 2011;
+#X text 19 -33 ATTENTION: Ce MiniModule FFT-Flt ne fonctionne que si
+un miniModule Init-FFT est présent dans le même patch;
+#X text 20 -3 WARNING: this MiniModule FFT-Flt functions only if a
+miniModule Init-FFT is present in same the patch;
+#X obj 11 134 cyclone/tosymbol;
+#X obj 10 111 cyclone/sprintf %d;
+#X connect 3 0 12 1;
+#X connect 3 0 17 0;
+#X connect 4 0 3 0;
+#X connect 5 0 12 0;
+#X connect 12 0 6 0;
+#X connect 16 0 4 0;
+#X connect 17 0 16 0;
+#X coords 0 -1 1 1 166 36 1 100 100;
+#X restore 786 345 pd ARGO;
+#X obj 843 173 openpanel;
+#X obj 843 153 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X text 864 152 You can load a sound file in the internal stereo tables
+;
+#X msg 842 194 read \$1;
+#X obj 786 104 bng 30 250 50 0 empty empty empty 0 -6 0 10 -258113
+-1 -1;
+#X obj 765 505 mtl/out~;
+#X msg 759 138 1;
+#X obj 806 258 mtl/player~ 0;
+#X obj 895 219 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X connect 0 0 6 0;
+#X connect 0 0 6 1;
+#X connect 1 0 4 0;
+#X connect 2 0 1 0;
+#X connect 4 0 8 0;
+#X connect 5 0 8 0;
+#X connect 7 0 8 0;
+#X connect 8 0 0 0;
+#X connect 9 0 8 1;

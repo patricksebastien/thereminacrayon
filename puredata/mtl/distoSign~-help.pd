@@ -1,0 +1,25 @@
+#N canvas 1 82 1351 661 10;
+#X obj -25 118 *~ 0.5;
+#X obj 71 117 *~ 0.5;
+#X obj -25 177 mtl/out~;
+#X text -29 46 tags: fx~;
+#X obj -25 94 osc~ 110;
+#X obj 71 93 osc~ 110;
+#X text -29 12 Description: A simple distortion. Positive and negative
+distortion can be set independently.;
+#X text 269 145 <-Click on the propeties menu to display params;
+#X obj 705 23 cnv 15 200 20 empty empty /distoSign/ 2 12 0 8 -258401
+-262144 0;
+#X obj 705 46 hsl 100 15 0 1 0 0 /distoSign/wet /distoSign/wet_ wet
+105 7 0 8 -262144 -1 -1 4950 1;
+#X obj 705 64 hsl 100 15 0 1 0 0 /distoSign/positive /distoSign/positive_
+positive 105 7 0 8 -262144 -1 -1 4950 1;
+#X obj 705 82 hsl 100 15 0 1 0 0 /distoSign/negative /distoSign/negative_
+negative 105 7 0 8 -262144 -1 -1 4950 1;
+#X obj -26 146 mtl/distoSign~ /id distoSign 0.5 0.5 0.5;
+#X connect 0 0 12 0;
+#X connect 1 0 12 1;
+#X connect 4 0 0 0;
+#X connect 5 0 1 0;
+#X connect 12 0 2 0;
+#X connect 12 1 2 1;

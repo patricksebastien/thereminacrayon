@@ -1,0 +1,36 @@
+#N canvas 1 82 1272 661 10;
+#X obj -226 190 mtl/out~;
+#X text -230 59 tags: fx~;
+#X text 8 158 <-Click on the propeties menu to display params;
+#X obj 82 231 cnv 15 200 20 empty empty /platereverb/ 2 12 0 8 -258401
+-262144 0;
+#X obj 88 260 hsl 100 15 0 1 0 0 /platereverb/wet /platereverb/wet_
+wet 105 7 0 8 -262144 -1 -1 0 1;
+#X text -232 24 Description:;
+#X text -153 24 PlateReverb;
+#X obj 88 279 hsl 100 15 0 1 0 0 /platereverb/decay_diffusion2 /platereverb/decay_diffusion2_
+decay_diffusion2 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj 88 299 hsl 100 15 0 1 0 0 /platereverb/decay_diffusion /platereverb/decay_diffusion_
+decay_diffusion 105 7 0 8 -262144 -1 -1 0 1;
+#X obj 87 363 hsl 100 15 0 5 0 0 /platereverb/excursion /platereverb/excursion_
+excursion 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj 87 384 hsl 100 15 0 1 0 0 /platereverb/decay /platereverb/decay_
+decay 105 7 0 8 -262144 -1 -1 0 1;
+#X obj 87 404 hsl 100 15 0 250 0 0 /platereverb/predelay /platereverb/predelay_
+predelay 105 7 0 8 -262144 -1 -1 3960 1;
+#X obj 87 424 hsl 100 15 0 22050 0 0 /platereverb/damping /platereverb/damping_
+damping 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj 87 444 hsl 100 15 0 22050 0 0 /platereverb/bandwidth /platereverb/bandwidth_
+bandwidth 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj -228 114 mtl/rain~ /id rain;
+#X obj 88 319 hsl 100 15 0 1 0 0 /platereverb/inputdiffusion1 /platereverb/inputdiffusion1_
+input_diffusion 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj 87 341 hsl 100 15 0 1 0 0 /platereverb/inputdiffusion2 /platereverb/inputdiffusion2_
+input_diffusion2 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj -230 158 mtl/platereverb~ /id platereverb;
+#X obj -48 102 phasor~ 1;
+#X connect 14 0 17 0;
+#X connect 17 0 0 0;
+#X connect 17 1 0 1;
+#X connect 18 0 17 0;
+#X connect 18 0 17 1;

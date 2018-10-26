@@ -1,0 +1,42 @@
+#N canvas 1 82 1272 661 10;
+#X obj 93 362 mtl/out~;
+#X text 89 231 tags: fx~;
+#X text 329 334 <-Click on the propeties menu to display params;
+#X obj 470 107 cnv 15 200 20 empty empty /chorus3/ 2 12 0 8 -258401
+-262144 0;
+#X obj 470 131 hsl 100 15 0 1 0 0 /chorus3/wet /chorus3/wet_ wet 105
+7 0 8 -262144 -1 -1 4950 1;
+#N canvas 0 82 1366 662 generate~ 0;
+#X obj 32 213 osc~ 200;
+#X obj 32 89 metro 400;
+#X obj 32 175 mtof;
+#X obj 104 195 mtof;
+#X obj 32 132 + 20;
+#X obj 32 111 random 70;
+#X obj 32 261 outlet~;
+#X obj 103 261 outlet~;
+#X obj 104 175 mtl/closestNote 0 2 4 7 9;
+#X obj 104 214 osc~ 100;
+#X obj 32 155 mtl/closestNote 0 2 4 7 9;
+#X connect 0 0 6 0;
+#X connect 1 0 5 0;
+#X connect 2 0 0 0;
+#X connect 3 0 9 0;
+#X connect 4 0 8 0;
+#X connect 4 0 10 0;
+#X connect 5 0 4 0;
+#X connect 8 0 3 0;
+#X connect 9 0 7 0;
+#X connect 10 0 2 0;
+#X restore 91 286 pd generate~;
+#X text 87 196 Description:;
+#X text 166 196 Chorus;
+#X obj 470 149 hsl 100 15 0 10 0 0 /chorus3/frequency /chorus3/frequency_
+frequency 105 7 0 8 -262144 -1 -1 4950 1;
+#X obj 470 167 hsl 100 15 0 3 0 0 /chorus3/modulation /chorus3/modulation_
+modulation 105 7 0 8 -262144 -1 -1 6600 1;
+#X obj 89 330 mtl/chorus3~ /id chorus3 0.5 5 2;
+#X connect 5 0 10 0;
+#X connect 5 1 10 1;
+#X connect 10 0 0 0;
+#X connect 10 1 0 1;

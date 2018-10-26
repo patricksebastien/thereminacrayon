@@ -1,0 +1,38 @@
+#N canvas 1 82 1272 661 10;
+#X obj 70 255 mtl/out~;
+#X obj 514 9 cnv 15 200 20 empty empty /tremolo/ 2 12 0 8 -258401 -262144
+0;
+#X text 306 206 <-Click on the propeties menu to display params;
+#X text 774 143 tags: fx~;
+#X obj 515 39 hsl 100 15 0 1 0 0 /tremolo/wet /tremolo/wet_ wet 105
+7 0 8 -262144 -1 -1 9900 1;
+#X obj 912 113 cnv 15 250 536 empty empty empty 20 12 0 14 -228992
+-66577 0;
+#X text 773 161 Romain Vuillet;
+#X obj 81 146 osc~ 250;
+#X obj 515 59 hsl 100 15 0 1 0 0 /tremolo/amplitude /tremolo/amplitude_
+amplitude 105 7 0 8 -262144 -1 -1 9900 1;
+#X obj 515 79 hsl 100 15 1 30 0 0 /tremolo/frequency /tremolo/frequency_
+frequency 105 7 0 8 -262144 -1 -1 3072 1;
+#X obj 514 99 hsl 100 15 1 1.4 0 0 /tremolo/signalcontrol /tremolo/signalcontrol_
+signalcontrol 105 7 0 8 -262144 -1 -1 0 1;
+#X text 923 123 Le signal est module en amplitude;
+#X text 923 137 par le signal dont on controle;
+#X text 923 153 l'enveloppe.;
+#X text 922 208 d'amplitude \, son complement a la;
+#X text 922 223 proportion de signal non modifie.;
+#X text 922 177 "Amplitude" : proportion du signal;
+#X text 923 191 d'entree affecte par la modulation;
+#X text 922 257 "Frequence" : controle la vitesse;
+#X text 922 270 de modulation car c'est la frequen-;
+#X text 922 284 ce fondamentale de l'enveloppe;
+#X text 922 327 "Signal de controle" : permet de;
+#X text 922 342 de passer progressivement d'une;
+#X text 922 359 enveloppe sinusoidale a une enve-;
+#X text 922 374 loppe de modulation presque carree;
+#X text 776 126 Description: tremolo;
+#X obj 70 208 mtl/tremolo~ /id tremolo 1 1 10 1;
+#X connect 7 0 26 0;
+#X connect 7 0 26 1;
+#X connect 26 0 0 0;
+#X connect 26 1 0 1;
