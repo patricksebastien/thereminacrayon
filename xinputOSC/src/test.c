@@ -97,7 +97,7 @@ print_events(Display	*dpy)
     XEvent        Event;
 
     setvbuf(stdout, NULL, _IOLBF, 0);
-	lo_address t = lo_address_new(NULL, "3333");
+	lo_address t = lo_address_new(NULL, "3335");
 
 
 
@@ -118,7 +118,7 @@ print_events(Display	*dpy)
 		printf("a[%d]=%d ", motion->first_axis + loop, motion->axis_data[loop]);
 	    }
 	    printf("\n");
-		*/
+*/		
 	}
     }
 }

@@ -293,31 +293,36 @@
 #X text 31 206 split high cpu to pd tilde;
 #X text 27 235 use sj input compander and filter;
 #X restore 16 81 pd todo;
-#N canvas 1 58 450 300 xinputOSC 0;
+#N canvas 1190 155 450 300 xinputOSC 0;
 #X obj 14 7 loadbang;
 #X obj 14 83 oscparse;
 #X obj 14 108 list trim;
 #X obj 14 139 route foo;
 #X obj 14 183 route bar;
-#X msg 14 31 listen 3333;
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.30534e+06 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.28607e+06 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
-#X connect 0 0 5 0;
+#X msg 14 31 listen 3335;
+#X obj 168 67 phiscale 0 1.67755e+07 0 1;
+#X obj 168 97 phiscale 0 1.67749e+07 0 1;
+#X text 269 16 depending on resolution?;
+#X connect 0 0 10 0;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 3 0 4 0;
-#X connect 4 0 7 0;
-#X connect 5 0 6 0;
-#X connect 6 0 1 0;
-#X connect 7 0 8 0;
-#X connect 7 1 9 0;
-#X connect 7 2 10 0;
+#X connect 4 0 6 0;
+#X connect 5 0 1 0;
+#X connect 6 0 7 0;
+#X connect 6 0 11 0;
+#X connect 6 1 8 0;
+#X connect 6 1 12 0;
+#X connect 6 2 9 0;
+#X connect 10 0 5 0;
 #X restore 89 63 pd xinputOSC;
 #N canvas 831 297 1131 643 granular 0;
 #X msg 77 517 0;
@@ -344,7 +349,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -, f 5;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 10906 0;
+-1 -1 13624 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -, f 5;
 #X obj 687 372 r jitbang;
@@ -15091,7 +15096,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 340 224 pd cpu;
 #X obj 340 246 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 4 256;
+-45076 -262144 -1 6 256;
 #N canvas 124 121 1000 510 sampler 0;
 #X obj 51 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
@@ -16051,7 +16056,7 @@ f f f f f f f f f f f f;
 #X obj 918 45 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 918 68 hsl 100 15 0 100 0 0 /noisegate/thresold /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 9900 1;
+thresold 105 7 0 8 -262144 -1 -1 4950 1;
 #X obj 918 86 hsl 100 15 0 1000 0 0 /noisegate/attack /noisegate/attack_
 attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 918 104 hsl 100 15 0 1000 0 0 /noisegate/decay /noisegate/decay_
@@ -16061,9 +16066,9 @@ decay 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 315 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 908 338 hsl 100 15 0 100 0 0 /noisegate/thresold2 /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 9900 1;
+thresold 105 7 0 8 -262144 -1 -1 4950 1;
 #X obj 907 357 hsl 100 15 0 1000 0 0 /noisegate2/attack /noisegate/attack_
-attack 105 7 0 8 -262144 -1 -1 3290 1;
+attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 374 hsl 100 15 0 1000 0 0 /noisegate2/decay /noisegate/decay_
 decay 105 7 0 8 -262144 -1 -1 990 1;
 #X msg 589 90 1;
@@ -17835,7 +17840,7 @@ first beat.;
 #X connect 22 0 21 0;
 #X restore 334 82 pd BPMtap;
 #X obj 50 50 hradio 40 1 0 4 \$0-dummysend \$0-beatmonitor 1__2__3__4
-14 24 1 24 -1 -4034 -1 1;
+14 24 1 24 -1 -4034 -1 2;
 #X text 51 122 A BPM indicator GUI with responsive surface: reset BPM
 sync to the One.;
 #X text 333 59 not used now:;
@@ -18368,22 +18373,22 @@ by double-clicking their oscilloscope regions!;
 #X obj 570 33 monoslicycle 2 20;
 #X restore 207 16 pd slicejockey;
 #X obj 66 495 vsl 160 800 0 100 0 0 /noisegate/thresold empty gate1
-0 -20 0 24 -1 -262144 -1 79900 1;
+0 -20 0 24 -1 -262144 -1 0 1;
 #X obj 276 495 vsl 160 800 0 100 0 0 /noisegate2/thresold empty gate2
-0 -20 0 24 -1 -262144 -1 79900 1;
+0 -20 0 24 -1 -262144 -1 0 1;
 #X obj 487 1348 s filter1;
 #X obj 486 1326 pack f f;
 #X obj 476 494 vsl 160 800 0 1 0 0 empty empty FILTER 0 -20 0 24 -1
 -262144 -1 0 1;
 #X obj 639 494 vsl 160 800 0 1 0 0 empty empty empty 0 -20 0 24 -1
--262144 -1 1400 1;
+-262144 -1 0 1;
 #X obj 503 1304 t b f;
 #X obj 479 1303 f;
 #X obj 846 1326 pack f f;
 #X obj 836 495 vsl 160 800 0 1 0 0 empty empty DELAY 0 -20 0 24 -1
--262144 -1 4500 1;
+-262144 -1 0 1;
 #X obj 999 495 vsl 160 800 0 1 0 0 empty empty empty 0 -20 0 24 -1
--262144 -1 77300 1;
+-262144 -1 0 1;
 #X obj 863 1304 t b f;
 #X obj 839 1303 f;
 #X obj 847 1348 s delay1;
@@ -18403,6 +18408,36 @@ by double-clicking their oscilloscope regions!;
 #X obj 1599 1303 f;
 #X obj 1217 1348 s krunch1;
 #X obj 1607 1348 s reverb1;
+#N canvas 1190 155 450 300 sp3accel 0;
+#X obj 14 7 loadbang;
+#X obj 14 83 oscparse;
+#X obj 14 108 list trim;
+#X obj 14 56 netreceive -u -b;
+#X obj 13 200 unpack f f f;
+#X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 5 256;
+#X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 -887 256;
+#X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 -431 256;
+#X obj 226 68 phiscale 0 1.67755e+07 0 1;
+#X obj 226 98 phiscale 0 1.67749e+07 0 1;
+#X msg 14 31 listen 3339;
+#X obj 14 139 route sp;
+#X obj 13 165 route accel;
+#X connect 0 0 10 0;
+#X connect 1 0 2 0;
+#X connect 2 0 11 0;
+#X connect 3 0 1 0;
+#X connect 4 0 5 0;
+#X connect 4 0 8 0;
+#X connect 4 1 6 0;
+#X connect 4 1 9 0;
+#X connect 4 2 7 0;
+#X connect 10 0 3 0;
+#X connect 11 0 12 0;
+#X connect 12 0 4 0;
+#X restore 89 87 pd sp3accel;
 #X connect 12 0 13 0;
 #X connect 17 0 18 0;
 #X connect 23 0 22 0;
