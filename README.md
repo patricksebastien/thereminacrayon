@@ -22,6 +22,20 @@ I modified xinput source to add liblo for sending x11 event to pd (via OSC). The
 
 xinputOSC.sh wait for the pen to be listed in xinput and then launch the custom xinputOSC binary (xinputOSC test deviceID).
 
+## ACCELEROMETER
+
+The value of the accelerometer is sent to pd via OSC. The python script that do this job is spAccel.py
+
+## AMBIANT LIGHT
+cat /sys/devices/pci0000:00/INT33C2:00/i2c-0/i2c-MSHW0030:00/0018:045E:07C4.0002/HID-SENSOR-200041.4.auto/iio:device2/in_intensity_both_raw
+
+## Easystroke
+
+Easystoke is configured for gesture recognition with the pencil, but it's very hard to have good result because we need to hold button 2 (second button on the SP3 pencil) while drawing the gesture but NOT touching the screen and NOT going too far from it. Looking for an alternative.
+
+The command to send value to pd via OSC is:
+Script doing this job is: easystrokje_2osc.py
+
 ## PD TRICKS
 
 - [declare -path ./]
