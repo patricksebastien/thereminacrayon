@@ -1,4 +1,4 @@
-#N canvas 0 32 2160 1408 10;
+#N canvas 0 58 2160 1382 10;
 #X declare -path pdmtl;
 #X declare -lib zexy;
 #X declare -lib comport;
@@ -302,9 +302,9 @@
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1.30534e+06 256;
+-262144 -1 -1 0 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 1.28607e+06 256;
+-262144 -1 -1 0 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X msg 14 31 listen 3335;
@@ -349,7 +349,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -, f 5;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 13624 0;
+-1 -1 12443 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -, f 5;
 #X obj 687 372 r jitbang;
@@ -15096,7 +15096,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 340 224 pd cpu;
 #X obj 340 246 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 6 256;
+-45076 -262144 -1 5 256;
 #N canvas 124 121 1000 510 sampler 0;
 #X obj 51 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
@@ -17840,7 +17840,7 @@ first beat.;
 #X connect 22 0 21 0;
 #X restore 334 82 pd BPMtap;
 #X obj 50 50 hradio 40 1 0 4 \$0-dummysend \$0-beatmonitor 1__2__3__4
-14 24 1 24 -1 -4034 -1 2;
+14 24 1 24 -1 -4034 -1 3;
 #X text 51 122 A BPM indicator GUI with responsive surface: reset BPM
 sync to the One.;
 #X text 333 59 not used now:;
@@ -18415,11 +18415,11 @@ by double-clicking their oscilloscope regions!;
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 5 256;
+-262144 -1 -1 0 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 -887 256;
+-262144 -1 -1 0 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 -431 256;
+-262144 -1 -1 0 256;
 #X obj 226 68 phiscale 0 1.67755e+07 0 1;
 #X obj 226 98 phiscale 0 1.67749e+07 0 1;
 #X msg 14 31 listen 3339;
@@ -18438,6 +18438,13 @@ by double-clicking their oscilloscope regions!;
 #X connect 11 0 12 0;
 #X connect 12 0 4 0;
 #X restore 89 87 pd sp3accel;
+#N canvas 1 77 450 300 als 0;
+#X obj 183 170 outlet;
+#X obj 92 47 netreceive 9001;
+#X connect 1 0 0 0;
+#X restore 440 224 pd als;
+#X obj 441 253 nbx 5 52 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 48
+-262144 -1 -1 282 256;
 #X connect 12 0 13 0;
 #X connect 17 0 18 0;
 #X connect 23 0 22 0;
@@ -18468,3 +18475,4 @@ by double-clicking their oscilloscope regions!;
 #X connect 42 0 43 0;
 #X connect 42 1 39 1;
 #X connect 43 0 39 0;
+#X connect 47 0 48 0;

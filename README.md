@@ -27,7 +27,9 @@ xinputOSC.sh wait for the pen to be listed in xinput and then launch the custom 
 The value of the accelerometer is sent to pd via OSC. The python script that do this job is spAccel.py
 
 ## AMBIANT LIGHT
-cat /sys/devices/pci0000:00/INT33C2:00/i2c-0/i2c-MSHW0030:00/0018:045E:07C4.0002/HID-SENSOR-200041.4.auto/iio:device2/in_intensity_both_raw
+cat /sys/devices/pci0000\:00/INT33C2\:00/i2c-0/i2c-MSHW0030\:00/0018\:045E\:07C4.0001/HID-SENSOR-200041.4.auto/iio\:device2/in_illuminance_raw
+cat /sys/devices/pci0000\:00/INT33C2\:00/i2c-0/i2c-MSHW0030\:00/0018\:045E\:07C4.0001/HID-SENSOR-200041.4.auto/iio\:device4/in_illuminance_raw
+udevadm info --export-db
 
 ## Easystroke
 
