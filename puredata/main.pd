@@ -1,4 +1,4 @@
-#N canvas 0 58 2160 1382 10;
+#N canvas 0 32 2160 1408 10;
 #X declare -path pdmtl;
 #X declare -lib zexy;
 #X declare -lib comport;
@@ -349,7 +349,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -, f 5;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 12443 0;
+-1 -1 12840 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -, f 5;
 #X obj 687 372 r jitbang;
@@ -597,7 +597,7 @@
 #X connect 94 0 89 0;
 #X connect 94 1 91 0;
 #X restore 206 43 pd granular;
-#N canvas 2 58 1278 665 algo 0;
+#N canvas 1 466 1278 665 algo 0;
 #N canvas 539 134 714 430 eventshaker 0;
 #X obj 5 177 sel 0 1 2 3;
 #X obj 109 120 tgl 12 1 empty empty empty 0 -12 1 10 -1 -262144 -1
@@ -742,7 +742,7 @@
 #X obj 109 127 vsl 12 64 0 64 0 1 \$0-N1 \$0-N1-r N 0 -8 1 8 -262144
 -1 -1 1181 1;
 #X obj 163 127 vsl 12 64 12 96 0 1 \$0-C1 \$0-C1-r C 0 -8 1 8 -262144
--1 -1 0 1;
+-1 -1 1723 1;
 #X obj 136 127 vsl 12 64 1 64 0 1 \$0-D1 \$0-D1-r D 0 -8 1 8 -262144
 -1 -1 1100 1;
 #X obj 293 45 r psalgoc1;
@@ -919,7 +919,7 @@
 #X obj 163 128 vsl 12 64 0.01 1 1 1 \$0-L2 \$0-L2-r L2 0 -8 1 8 -262144
 -1 -1 0 1;
 #X obj 185 128 vsl 12 64 0.01 1 1 1 \$0-L3 \$0-L3-r L3 0 -8 1 8 -262144
--1 -1 0 1;
+-1 -1 3800 1;
 #X obj 161 9 r psalgovol3;
 #X obj 161 28 r psalgovol2;
 #X obj 161 49 r psalgovol1;
@@ -1070,7 +1070,7 @@
 #X obj 19 634 throw~ fl;
 #X obj 89 634 throw~ fr;
 #X obj 1047 41 switch~;
-#X obj 1047 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 1047 20 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 21 581 fx.granular.live~ @id algo.granular @wet 0 @rack algo
 ;
@@ -1119,8 +1119,10 @@ algo.granular@transposition;
 #X msg 1102 589 100;
 #X msg 1141 587 0;
 #X obj 951 338 r psalgotrasnpose;
-#X obj 300 129 r \$0-thereminpitch;
-#X obj 300 154 phiscale 300 900 12 96;
+#X obj 297 106 r \$0-thereminpitch;
+#X obj 331 145 phiscale 300 900 12 96;
+#X obj 1160 78 inlet;
+#X obj 373 162 r \$0-thereminpitchmidi;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 0 2 3 0;
@@ -1178,6 +1180,8 @@ algo.granular@transposition;
 #X connect 85 0 65 0;
 #X connect 86 0 87 0;
 #X connect 87 0 1 1;
+#X connect 88 0 46 0;
+#X connect 89 0 1 1;
 #X restore 206 66 pd algo;
 #N canvas 5 59 1197 634 rez 0;
 #X text 19 302 2/2014 martin brinkmann;
@@ -1583,7 +1587,7 @@ hp-filter;
 #X obj -143 147 inlet;
 #X msg 15 502 0;
 #X obj 63 365 pack f f;
-#X msg -148 457 0 4.4762;
+#X msg -148 457 1 4.4762;
 #X msg 64 391 set \$1 \$2;
 #X obj 125 589 >=;
 #X msg 216 752 0 10.9282;
@@ -2810,6 +2814,8 @@ f f f f f f f f f f f f;
 #X obj 380 288 mtl/listOp;
 #X obj 168 214 != 1;
 #X msg 630 284 -2;
+#X obj 894 138 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
 #X connect 1 0 38 0;
 #X connect 1 0 40 0;
 #X connect 1 3 26 0;
@@ -2872,6 +2878,7 @@ f f f f f f f f f f f f;
 #X connect 60 1 20 0;
 #X connect 61 0 46 1;
 #X connect 62 0 20 1;
+#X connect 63 0 31 0;
 #X restore 207 90 pd rez;
 #N canvas 558 238 529 405 fiddle 0;
 #X obj 119 159 unpack;
@@ -2942,12 +2949,12 @@ f f f f f f f f f f f f;
 #X text 267 63 todo;
 #X obj 328 262 spigot;
 #X obj 311 319 f;
-#X obj 78 48 fiddle~ 2048 1 20 5;
+#X obj 115 107 fiddle~ 2048 1 20 5;
 #X obj 119 131 route 1 2 3 4 5;
 #X text 42 114 db;
 #X obj 326 159 unpack;
 #X obj 268 12 r psrezfiddle;
-#X obj 79 22 adc~ 1;
+#X obj 116 81 adc~ 1;
 #X connect 0 0 4 0;
 #X connect 0 0 14 0;
 #X connect 1 0 5 0;
@@ -15096,7 +15103,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 340 224 pd cpu;
 #X obj 340 246 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 5 256;
+-45076 -262144 -1 10 256;
 #N canvas 124 121 1000 510 sampler 0;
 #X obj 51 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
@@ -15567,9 +15574,22 @@ f f f f f f f f f f f f;
 #X obj 527 47 sel 1;
 #X obj 35 38 catch~ looperin;
 #X obj 114 188 pd~ -ninsig 1 -noutsig 1 -fifo 20;
+#X obj 404 124 inlet;
+#X obj 454 124 inlet;
+#X obj 504 124 inlet;
+#X obj 554 124 inlet;
+#X obj 73 132 inlet;
+#X obj 43 232 *~ 1;
+#X obj 221 32 t b b;
+#X msg 246 65 0;
+#X obj 144 26 delay 1000;
+#X msg 144 49 b;
+#X msg 201 65 1;
 #X connect 0 0 23 0;
+#X connect 1 0 11 0;
 #X connect 2 0 23 0;
 #X connect 3 0 23 0;
+#X connect 3 0 30 0;
 #X connect 4 0 21 0;
 #X connect 5 0 6 0;
 #X connect 6 0 2 0;
@@ -15587,10 +15607,22 @@ f f f f f f f f f f f f;
 #X connect 17 0 14 0;
 #X connect 19 0 20 0;
 #X connect 21 0 3 0;
-#X connect 22 0 23 0;
+#X connect 22 0 29 0;
 #X connect 23 1 19 0;
 #X connect 23 1 12 0;
-#X restore 210 176 pd looper;
+#X connect 24 0 2 0;
+#X connect 25 0 3 0;
+#X connect 26 0 8 0;
+#X connect 27 0 10 0;
+#X connect 28 0 29 1;
+#X connect 29 0 23 0;
+#X connect 30 0 32 0;
+#X connect 30 1 31 0;
+#X connect 31 0 29 1;
+#X connect 32 0 33 0;
+#X connect 33 0 34 0;
+#X connect 34 0 29 1;
+#X restore 1515 369 pd looper;
 #N canvas 39 208 1029 317 routing 0;
 #X obj 259 246 throw~ sjin;
 #X obj 122 146 r pssjrec1sampler;
@@ -16056,7 +16088,7 @@ f f f f f f f f f f f f;
 #X obj 918 45 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 918 68 hsl 100 15 0 100 0 0 /noisegate/thresold /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 4950 1;
+thresold 105 7 0 8 -262144 -1 -1 2701 1;
 #X obj 918 86 hsl 100 15 0 1000 0 0 /noisegate/attack /noisegate/attack_
 attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 918 104 hsl 100 15 0 1000 0 0 /noisegate/decay /noisegate/decay_
@@ -16066,7 +16098,7 @@ decay 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 315 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 908 338 hsl 100 15 0 100 0 0 /noisegate/thresold2 /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 4950 1;
+thresold 105 7 0 8 -262144 -1 -1 2701 1;
 #X obj 907 357 hsl 100 15 0 1000 0 0 /noisegate2/attack /noisegate/attack_
 attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 374 hsl 100 15 0 1000 0 0 /noisegate2/decay /noisegate/decay_
@@ -18373,9 +18405,9 @@ by double-clicking their oscilloscope regions!;
 #X obj 570 33 monoslicycle 2 20;
 #X restore 207 16 pd slicejockey;
 #X obj 66 495 vsl 160 800 0 100 0 0 /noisegate/thresold empty gate1
-0 -20 0 24 -1 -262144 -1 0 1;
+0 -20 0 24 -1 -262144 -1 21800 1;
 #X obj 276 495 vsl 160 800 0 100 0 0 /noisegate2/thresold empty gate2
-0 -20 0 24 -1 -262144 -1 0 1;
+0 -20 0 24 -1 -262144 -1 42200 1;
 #X obj 487 1348 s filter1;
 #X obj 486 1326 pack f f;
 #X obj 476 494 vsl 160 800 0 1 0 0 empty empty FILTER 0 -20 0 24 -1
@@ -18415,11 +18447,11 @@ by double-clicking their oscilloscope regions!;
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 20 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 -881 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 -431 256;
 #X obj 226 68 phiscale 0 1.67755e+07 0 1;
 #X obj 226 98 phiscale 0 1.67749e+07 0 1;
 #X msg 14 31 listen 3339;
@@ -18444,7 +18476,27 @@ by double-clicking their oscilloscope regions!;
 #X connect 1 0 0 0;
 #X restore 440 224 pd als;
 #X obj 441 253 nbx 5 52 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 48
--262144 -1 -1 282 256;
+-262144 -1 -1 0 256;
+#X obj 730 85 bng 200 250 50 0 empty empty rec 17 7 0 66 -262144 -1
+-1;
+#X obj 1663 77 bng 200 250 50 0 empty empty reset 17 7 0 66 -262144
+-1 -1;
+#X obj 972 86 bng 200 250 50 0 empty empty dub 17 7 0 66 -262144 -1
+-1;
+#X obj 1188 86 bng 200 250 50 0 empty empty off 17 7 0 66 -262144 -1
+-1;
+#X obj 484 55 adc~ 1;
+#X obj 428 125 r a2f1;
+#X floatatom 436 163 5 0 0 0 - - -, f 5;
+#X obj 557 137 unpack;
+#X obj 553 85 fiddle~ 2048 1 20 5;
+#X obj 557 109 route 1 2 3 4 5;
+#X obj 554 59 adc~ 1;
+#X obj 544 167 ftom;
+#X floatatom 600 169 5 0 0 0 - - -, f 5;
+#X obj 10 140 tgl 200 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X obj 535 211 s \$0-thereminpitchmidi;
 #X connect 12 0 13 0;
 #X connect 17 0 18 0;
 #X connect 23 0 22 0;
@@ -18476,3 +18528,13 @@ by double-clicking their oscilloscope regions!;
 #X connect 42 1 39 1;
 #X connect 43 0 39 0;
 #X connect 47 0 48 0;
+#X connect 49 0 15 1;
+#X connect 50 0 15 2;
+#X connect 51 0 15 3;
+#X connect 52 0 15 4;
+#X connect 56 0 60 0;
+#X connect 57 4 58 0;
+#X connect 58 0 56 0;
+#X connect 59 0 57 0;
+#X connect 60 0 63 0;
+#X connect 62 0 8 0;
