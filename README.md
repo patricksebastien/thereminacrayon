@@ -54,7 +54,7 @@ Questions:
 
 Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to sedn and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:
 
-open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --the orange alt-buttons responsive-fonts --load pd.json --fullscreen
+open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-buttons responsive-fonts --load pd.json --fullscreen
 
 ## PD TRICKS
 

@@ -7,9 +7,11 @@ sleep 5
 flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
 sleep 5
 pd -rt -jack -channels 2 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
+open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
 sleep 5
-wmctrl -r main.pd -t 2 &
-wmctrl -r main.pd -b toggle,fullscreen &
+wmctrl -r main.pd -t 3 &
+#wmctrl -r main.pd -b toggle,fullscreen &
+wmctrl -r "Open Stage Control v0.40.3" -t 2 &
 wmctrl -r tac.xcf -t 1 &
 wmctrl -r tac.xcf -b toggle,fullscreen &
 touchegg &
