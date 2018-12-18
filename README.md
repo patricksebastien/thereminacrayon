@@ -50,6 +50,9 @@ Questions:
 - how to disable touch (using only pencil), if not possible then how to assign touch to unuseful tool?
 - how long on battery with projector?
 
+## KRITA
+Krita is better for painting, look in the folder krita README.md for information on the python API.
+
 ## OPEN STAGE CONTROL
 
 Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to sedn and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:

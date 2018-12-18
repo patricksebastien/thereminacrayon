@@ -1,0 +1,25 @@
+<!DOCTYPE patchbay>
+<patchbay version="0.4.5" name="patchbay">
+ <output-sockets>
+  <socket type="jack-audio" name="Bitwig Studio 1" client="Bitwig Studio" exclusive="off">
+   <plug>Speakers-L</plug>
+  </socket>
+  <socket type="jack-audio" name="Bitwig Studio 2" client="Bitwig Studio" exclusive="off">
+   <plug>Speakers-R</plug>
+  </socket>
+ </output-sockets>
+ <input-sockets>
+  <socket type="jack-audio" name="pure_data 1" client="pure_data" exclusive="off">
+   <plug>input2</plug>
+  </socket>
+  <socket type="jack-audio" name="pure_data 2" client="pure_data" exclusive="off">
+   <plug>input3</plug>
+  </socket>
+ </input-sockets>
+ <slots/>
+ <cables>
+  <cable output="Bitwig Studio 1" type="jack-audio" input="pure_data 1"/>
+  <cable output="Bitwig Studio 2" type="jack-audio" input="pure_data 2"/>
+ </cables>
+</patchbay>
+
