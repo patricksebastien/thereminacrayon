@@ -3,6 +3,17 @@ Example of API to show color GUI:
 import sys
 from krita import *
 Krita.instance().action('show_color_selector').trigger()
+Krita.instance().action('decrease_brush_size').trigger()
+...
+show_brush_preset
+['zoom_to_100pct', '&Reset zoom']
+['view_zoom_in', 'Zoom &In']
+['view_zoom_out', 'Zoom &Out']
+['`wrap_around_mode`', '&Wrap Around Mode']
+
+...
+
+['filter_apply_again', '&Apply Filter Again: Noise']
 
 List of API:
 ==== Warning: Script not saved! ====
@@ -21,7 +32,7 @@ hello
 ['rotate_canvas_right', 'Rotate &Canvas Right']
 ['rotate_canvas_left', 'Rotate Canvas &Left']
 ['reset_canvas_rotation', 'R&eset Canvas Rotation']
-['wrap_around_mode', '&Wrap Around Mode']
+['`wrap_around_mode`', '&Wrap Around Mode']
 ['level_of_detail_mode', '&Instant Preview Mode']
 ['softProof', 'Soft &Proofing']
 ['gamutCheck', '&Out of Gamut Warnings']
