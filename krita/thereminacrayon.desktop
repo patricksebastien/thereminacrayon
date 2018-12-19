@@ -2,6 +2,7 @@
 Type=Service
 ServiceTypes=Krita/PythonPlugin
 X-KDE-Library=thereminacrayon
-X-Python-2-Compatible=false
-Name=Theremin a crayon
-Comment=Theremin a crayon
+X-Python-2-Compatible=true
+X-Krita-Manual=Manual.html
+Name=thereminacrayon
+Comment=Replace this text with your description
