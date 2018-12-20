@@ -20,9 +20,8 @@ class Thereminacrayon(Extension):
         print(sys.version)
         print("---------------THEREMINACRAYON-----------------")
         self.dispatcher = dispatcher.Dispatcher()
-        self.dispatcher.map("/filter", print)
-        #notworking /volume...
-        self.dispatcher.map("/volume", self.print_compute_handler, "Volume", 2)
+        self.dispatcher.map("/zoom", self.zoom)
+        self.dispatcher.map("/canvasonly", self.canvasonly)
         self.server = osc_server.ThreadingOSCUDPServer(("127.0.0.1", 1239), self.dispatcher)
         print("Serving on {}".format(self.server.server_address))
         server_thread = threading.Thread(target=self.server.serve_forever)
@@ -31,21 +30,19 @@ class Thereminacrayon(Extension):
         
     def createActions(self, window):
         action = window.createAction(EXTENSION_ID, MENU_ENTRY, "tools/scripts")
-        # parameter 1 =  the name that Krita uses to identify the action
-        # parameter 2 = the text to be added to the menu entry for this script
-        # parameter 3 = location of menu entry
         action.triggered.connect(self.action_triggered)        
         
     def action_triggered(self):
-        pass # your active code goes here. 
+        pass
 
-    def print_volume_handler(unused_addr, args, volume):
-        print("[{0}] ~ {1}".format(args[0], volume))
-
-    def print_compute_handler(unused_addr, args, volume):
-        try:
-            print("[{0}] ~ {1}".format(args[0], args[1](volume)))
-        except ValueError: pass
+    def zoom(self, unused_addr, args):
+        if int(args) < 0:
+            app.action('view_zoom_out').trigger()
+        else:
+            app.action('view_zoom_in').trigger()
+    
+    def canvasonly(self, unused_addr, args):
+        app.action('view_show_canvas_only').trigger()
 
 
 # And add the extension to Krita's list of extensions:
