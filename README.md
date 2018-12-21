@@ -2,6 +2,18 @@
 
 A theremin with a Surface Pro (custom instrument to draw and play music simultaneously.
 
+## SETUP
+### JACK
+44100 - 128 - 2 (hw:UA25EX)\
+Latency: 21.0884ms round-trip\
+Deadline: 2.902ms
+qjackctl load patchbay (bitwig to pd)
+
+### STARTUP
+./tac.sh
+
+### LIMITATION
+Bitwig drums are CPU hungry causing glitch if using gimp or open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends.
 
 ## GUIDE
 - install ubuntu-studio
@@ -15,6 +27,12 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - sudo apt install touchegg
 - sudo apt install xdotool
 - autostart everything via tac.sh
+
+## FCB1010 (midi pedal)
+Using the UNO firmware with the dedicated software to setup the pedal. Using the stompbox mode (upper row is boolean), Here's the current config:
+
+Preset 01:
+@TODO
 
 ## XINPUTOSC
 
@@ -51,7 +69,7 @@ Questions:
 - how long on battery with projector?
 
 ## KRITA
-Krita is better for painting, look in the folder krita README.md for information on the python API.
+Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is too CPU intensive (for my setup).
 
 ## OPEN STAGE CONTROL
 

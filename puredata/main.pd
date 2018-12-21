@@ -1,4 +1,4 @@
-#N canvas 0 32 2160 1408 10;
+#N canvas 1 58 2158 1381 10;
 #X declare -path pdmtl;
 #X declare -lib zexy;
 #X declare -lib comport;
@@ -302,9 +302,9 @@
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.17009e+07 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.01814e+07 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X msg 14 31 listen 3335;
@@ -349,7 +349,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -, f 5;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 13943 0;
+-1 -1 11870 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -, f 5;
 #X obj 687 372 r jitbang;
@@ -15103,7 +15103,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 340 224 pd cpu;
 #X obj 340 246 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 9 256;
+-45076 -262144 -1 8 256;
 #N canvas 124 121 1000 510 sampler 0;
 #X obj 51 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
@@ -16087,7 +16087,7 @@ f f f f f f f f f f f f;
 #X obj 918 45 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 918 68 hsl 100 15 0 100 0 0 /noisegate/thresold /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 4950 1;
+thresold 105 7 0 8 -262144 -1 -1 229 1;
 #X obj 918 86 hsl 100 15 0 1000 0 0 /noisegate/attack /noisegate/attack_
 attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 918 104 hsl 100 15 0 1000 0 0 /noisegate/decay /noisegate/decay_
@@ -16097,7 +16097,7 @@ decay 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 315 cnv 15 200 20 empty empty /noisegate/ 2 12 0 8 -258401
 -262144 0;
 #X obj 908 338 hsl 100 15 0 100 0 0 /noisegate2/thresold /noisegate/thresold_
-thresold 105 7 0 8 -262144 -1 -1 4950 1;
+thresold 105 7 0 8 -262144 -1 -1 229 1;
 #X obj 907 357 hsl 100 15 0 1000 0 0 /noisegate2/attack /noisegate/attack_
 attack 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 908 374 hsl 100 15 0 1000 0 0 /noisegate2/decay /noisegate/decay_
@@ -17910,7 +17910,7 @@ first beat.;
 #X connect 22 0 21 0;
 #X restore 334 82 pd BPMtap;
 #X obj 50 50 hradio 40 1 0 4 \$0-dummysend \$0-beatmonitor 1__2__3__4
-14 24 1 24 -1 -4034 -1 0;
+14 24 1 24 -1 -4034 -1 1;
 #X text 51 122 A BPM indicator GUI with responsive surface: reset BPM
 sync to the One.;
 #X text 333 59 not used now:;
@@ -18485,11 +18485,11 @@ by double-clicking their oscilloscope regions!;
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 19 256;
+-262144 -1 -1 0 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 -875 256;
+-262144 -1 -1 0 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 -431 256;
+-262144 -1 -1 0 256;
 #X obj 226 68 phiscale 0 1.67755e+07 0 1;
 #X obj 226 98 phiscale 0 1.67749e+07 0 1;
 #X msg 14 31 listen 3339;
@@ -18598,7 +18598,7 @@ by double-clicking their oscilloscope regions!;
 #X obj 714 276 cnv 15 200 20 empty empty /eq3/ 2 12 0 8 -258401 -262144
 0;
 #X obj 705 306 hsl 100 15 0 1 0 0 /eq3/high /eq3/high_ high 105 7 0
-8 -262144 -1 -1 4950 1;
+8 -262144 -1 -1 7920 1;
 #X obj 764 351 hsl 100 15 0 1 0 0 /eq3/mid /eq3/mid mid 105 7 0 8 -262144
 -1 -1 0 1;
 #X obj 645 350 hsl 100 15 0 1 0 0 /eq3/low /eq3/low_ low 105 7 0 8
@@ -18689,30 +18689,56 @@ by double-clicking their oscilloscope regions!;
 #X connect 65 2 67 0;
 #X restore 22 110 pd openstagecontrol;
 #X obj 555 59 adc~ 1 4;
-#N canvas 1 58 450 300 osckrita 0;
+#N canvas 1296 255 839 710 osckrita 1;
 #X obj 49 200 netsend -u -b;
 #X obj 70 140 list prepend send;
 #X obj 70 164 list trim;
-#X obj 49 21 loadbang;
+#X obj 53 13 loadbang;
 #X msg 50 45 connect localhost 1239;
 #X obj 229 198 oscformat /canvasonly;
 #X obj 255 72 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 265 19 loadbang;
 #X obj 71 114 r kritaosc;
 #X obj 235 235 s kritaosc;
 #X msg 251 136 1;
-#X obj 265 41 delay 20000;
+#X obj 258 40 delay 20000;
+#X obj 375 235 s kritaosc;
+#X obj 369 197 oscformat /zoom;
+#X floatatom 329 119 5 0 0 0 - - -, f 5;
+#X obj 366 89 metro 1000;
+#X obj 365 68 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 366 112 random 20;
+#X obj 367 139 - 10;
+#X msg 567 109 options_configure;
+#X obj 584 210 oscformat /options_configure;
+#X msg 583 180 1;
+#X msg 473 252 1;
+#X obj 472 296 oscformat /burn;
+#X msg 473 332 1;
+#X obj 472 376 oscformat /emboss;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
+#X connect 3 0 10 0;
 #X connect 4 0 0 0;
-#X connect 5 0 9 0;
-#X connect 6 0 10 0;
-#X connect 7 0 11 0;
-#X connect 8 0 1 0;
-#X connect 10 0 5 0;
-#X connect 11 0 6 0;
+#X connect 5 0 8 0;
+#X connect 6 0 9 0;
+#X connect 7 0 1 0;
+#X connect 9 0 5 0;
+#X connect 10 0 6 0;
+#X connect 12 0 11 0;
+#X connect 13 0 12 0;
+#X connect 14 0 16 0;
+#X connect 15 0 14 0;
+#X connect 16 0 17 0;
+#X connect 17 0 12 0;
+#X connect 19 0 11 0;
+#X connect 20 0 19 0;
+#X connect 21 0 22 0;
+#X connect 22 0 11 0;
+#X connect 23 0 24 0;
+#X connect 24 0 11 0;
 #X restore 317 12 pd osckrita;
 #X connect 12 0 13 0;
 #X connect 17 0 18 0;

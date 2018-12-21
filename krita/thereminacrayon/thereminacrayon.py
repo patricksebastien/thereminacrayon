@@ -1,4 +1,4 @@
-#BBD's Krita Script Starter Feb 2018
+#TODO stop thread when krita quits (callback)?
 import sys
 import threading
 from pythonosc import dispatcher
@@ -20,8 +20,6 @@ class Thereminacrayon(Extension):
         print(sys.version)
         print("---------------THEREMINACRAYON-----------------")
         self.dispatcher = dispatcher.Dispatcher()
-        self.dispatcher.map("/zoom", self.zoom)
-        self.dispatcher.map("/canvasonly", self.canvasonly)
         self.server = osc_server.ThreadingOSCUDPServer(("127.0.0.1", 1239), self.dispatcher)
         print("Serving on {}".format(self.server.server_address))
         server_thread = threading.Thread(target=self.server.serve_forever)
@@ -30,20 +28,26 @@ class Thereminacrayon(Extension):
         
     def createActions(self, window):
         action = window.createAction(EXTENSION_ID, MENU_ENTRY, "tools/scripts")
-        action.triggered.connect(self.action_triggered)        
-        
+        action.triggered.connect(self.action_triggered)
+        #[print([a.objectName()]) for a in app.actions()]
+        for a in app.actions():
+            self.dispatcher.map("/"+str(a.objectName()), self.kritaActions)
+        #print(app.filters())
+        for b in app.filters():
+            print("/"+str(b))
+            self.dispatcher.map("/"+str(b), self.kritaFilters)
+
     def action_triggered(self):
         pass
 
-    def zoom(self, unused_addr, args):
-        if int(args) < 0:
-            app.action('view_zoom_out').trigger()
-        else:
-            app.action('view_zoom_in').trigger()
-    
-    def canvasonly(self, unused_addr, args):
-        app.action('view_show_canvas_only').trigger()
+    def kritaActions(self, unused_addr, args):
+        #print("from OSC - kritaActions: "+str(unused_addr))
+        app.action(unused_addr[1:]).trigger()
 
+    def kritaFilters(self, unused_addr, args):
+        #print("from OSC - kritaFilters: "+str(unused_addr))
+        app.filter(unused_addr[1:])
+        
 
 # And add the extension to Krita's list of extensions:
 app=Krita.instance()
