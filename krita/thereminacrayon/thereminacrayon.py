@@ -23,9 +23,7 @@ class Thereminacrayon(Extension):
         super().__init__(parent)
 
     def setup(self):
-        print("---------------PYTHON VERSION-----------------")
-        print(sys.version)
-        print("---------------THEREMINACRAYON-----------------")
+        print("----------------------------------------")
         self.dispatcher = dispatcher.Dispatcher()
         self.server = osc_server.ThreadingOSCUDPServer(("127.0.0.1", 1239), self.dispatcher)
         print("Serving on {}".format(self.server.server_address))

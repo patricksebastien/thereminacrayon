@@ -97,7 +97,34 @@ open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-butto
 
 ## BUG
 
-.,.
+Pen will need calibration when using another resolution:
+/usr/share/libwacom/n-trig-pen.tablet
+
+ 8 [Device]
+ 9 Name=N-Trig Pen
+10 DeviceMatch=usb:1b96:0001;i2c:1b96:1b05;
+11 Class=ISDV4
+12 Width=10
+13 Height=6
+14 IntegratedIn=Display;System
+15
+16 [Features]
+17 Stylus=true
+18 Touch=true
+19 Buttons=1
+
+And /usr/share/X11/xorg.conf.d/70-wacom.conf to (scroll down to the N-trig Part):
+
+ 96 # N-Trig Duosense Electromagnetic Digitizer
+ 97 Section "InputClass"
+ 98         Identifier "Wacom N-Trig class"
+ 99         MatchProduct "HID 1b96:0001|N-Trig Pen|N-Trig DuoSense|NTRG0001:01 1B96:1B05 Pen"
+100         MatchDevicePath "/dev/input/event*"
+101         Driver "wacom"
+102         Option "Button2" "3"
+103 EndSection
+
+
 
 ## TOUCHEGG configuration
 

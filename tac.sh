@@ -1,3 +1,11 @@
+killall /opt/bitwig-studio/bin/BitwigStudio
+killall pd
+killall bitwig
+killall krita
+killall /usr/lib/open-stage-control/open-stage-control
+killall /home/psc/11h11/thereminacrayon/xinputOSC/xinputOSC
+killall /usr/bin/python
+killall touchegg
 sudo service mysql stop
 sudo service nginx stop
 sudo service php7.2-fpm stop
