@@ -2,6 +2,15 @@
 
 A theremin with a Surface Pro (custom instrument to draw and play music simultaneously.
 
+# TODO
+- how long on battery (surface pro when doing krita and pd)
+- how long on battery for the projector (even built-in)
+- calculate the consommation of the projector
+- should I use a cromecast thing for wifi (but microphone needs to be connected anyway)
+- finish the theremin a crayon (12 pianos keys, case)
+- portable roadcase + amp ?
+- develop patch (music and krita)
+
 ## SETUP
 ### JACK
 44100 - 128 - 2 (hw:UA25EX)\
@@ -13,7 +22,7 @@ qjackctl load patchbay (bitwig to pd)
 ./tac.sh
 
 ### LIMITATION
-Bitwig drums are CPU hungry causing glitch if using gimp or open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends.
+Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends.
 
 ## GUIDE
 - install ubuntu-studio
@@ -36,7 +45,7 @@ Preset 01:
 
 ## XINPUTOSC
 
-I modified xinput source to add liblo for sending x11 event to pd (via OSC). The modification are located in test.c - right now hardcoded for surface pro 3 pen. It is possible also to send the windows button on the surface (Surface Pro 3/4 Buttons).
+I modified xinput source to add liblo for sending x11 event to pd (via OSC). The modification are located in test.c - right now hardcoded for surface pro 3 pen. It is possible also to send the sp3 button (Surface Pro 3/4 Buttons).
 
 xinputOSC.sh wait for the pen to be listed in xinput and then launch the custom xinputOSC binary (xinputOSC test deviceID).
 
@@ -49,16 +58,17 @@ cat /sys/devices/pci0000\:00/INT33C2\:00/i2c-0/i2c-MSHW0030\:00/0018\:045E\:07C4
 cat /sys/devices/pci0000\:00/INT33C2\:00/i2c-0/i2c-MSHW0030\:00/0018\:045E\:07C4.0001/HID-SENSOR-200041.4.auto/iio\:device4/in_illuminance_raw
 udevadm info --export-db
 
+There's a script to send this info to pd, but a bit cpu hungry.
+
 ## Easystroke
 
-Easystoke is configured for gesture recognition with the pencil, but it's very hard to have good result because we need to hold button 2 (second button on the SP3 pencil) while drawing the gesture but NOT touching the screen and NOT going too far from it. Looking for an alternative.
+Easystoke is configured for gesture recognition with the pencil, but it's very hard to have good result because we need to hold button 2 (second button on the SP3 pencil) while drawing the gesture but NOT touching the screen and NOT going too far from it. Looking for an alternative (maybe reconfirguring the first button of the pencil?)
 
-The command to send value to pd via OSC is:
 Script doing this job is: easystrokje_2osc.py
 
 ## GIMP
 
-Using the flatpak version of Gimp.
+Using the flatpak version of Gimp (not used, krita is better see below).
 
 Shortcut:
 - Ctrl+Shift+k = symmetry painting
@@ -69,11 +79,11 @@ Questions:
 - how long on battery with projector?
 
 ## KRITA
-Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is too CPU intensive (for my setup).
+Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is also more CPU intensive (depends on the brush AFAIK).
 
 ## OPEN STAGE CONTROL
 
-Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to sedn and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:
+Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to send and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:
 
 open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-buttons responsive-fonts --load pd.json --fullscreen
 
@@ -83,21 +93,42 @@ open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-butto
 
 ## NOTES
 
-- read serial in pd from uno theremin
-- using rx-tx pin on arduino with open theremin (only pinb 0 is available)
+- read serial in pd from uno theremin - prefering the midi firmware of uno + serial to midi
+- using rx-tx pin on arduino with open theremin (only pinb 0 is available) - meh
 - start pd with basic patch (sending osc xinput - serial comport etc)
 - configure midi in with foot pedal
-- communicating with gimp 2.10
-- check if open theremin output serial the volume antenna too
 - use tof - tats to send to pd (https://github.com/SofaPirate/AsciiMassage)
-- check if pen is available with gesture recognition (easystroke) - YES need to choose button (2)
-- is the pen eraser doing something?
-- control gimp from pd using osc (hacking gimp) or use xdotool?
 - pd sampler (mtl) doesnt work, try with pd048 or simply use .coll text file
 
 ## BUG
 
-Pen will need calibration when using another resolution:
+Pen will need calibration when using another ratio (16:9)
+
+xinput_calibrator -v
+DEBUG: Adding click 0 (X=232, Y=146)
+DEBUG: Adding click 1 (X=1661, Y=146)
+DEBUG: Adding click 2 (X=247, Y=661)
+DEBUG: Adding click 3 (X=1662, Y=661)
+
+a = (screen_width * 6 / 8) / (click_3_X - click_0_X)
+c = ((screen_width / 8) - (a * click_0_X)) / screen_width
+e = (screen_height * 6 / 8) / (click_3_Y - click_0_Y)
+f = ((screen_height / 8) - (e * click_0_Y)) / screen_height
+
+a (left) - should be alright
+c (right) - """
+e (top)
+f (bottom)
+
+xinput set-prop "16" 'Coordinate Transformation Matrix' a, 0.0, c, 0.0, e, f, 0.0, 0.0, 1.0
+
+Example 1080p:
+xinput set-prop "16" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0
+
+Reset:
+xinput set-prop "16" 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000
+
+
 /usr/share/libwacom/n-trig-pen.tablet
 
  8 [Device]
