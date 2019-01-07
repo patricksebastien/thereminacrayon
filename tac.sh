@@ -25,6 +25,5 @@ wmctrl -r main.pd -t 3 &
 wmctrl -r tac.kra -t 1 &
 #wmctrl -r main.pd -b toggle,fullscreen &
 wmctrl -r "Open Stage Control v0.40.3" -t 2 &
-
-
-
+xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0 &
+xrandr -s 1920x1080

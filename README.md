@@ -1,6 +1,6 @@
 # Theremin à crayon
 
-A theremin with a Surface Pro (custom instrument to draw and play music simultaneously.
+A theremin with a Surface Pro (custom instrument to draw and play music simultaneously).
 
 # TODO
 - how long on battery (surface pro when doing krita and pd)
@@ -66,6 +66,12 @@ Easystoke is configured for gesture recognition with the pencil, but it's very h
 
 Script doing this job is: easystrokje_2osc.py
 
+## KRITA
+Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is also more CPU intensive (depends on the brush AFAIK).
+
+### CONFIGURATION
+Disable touch painting (general)
+
 ## GIMP
 
 Using the flatpak version of Gimp (not used, krita is better see below).
@@ -78,8 +84,7 @@ Questions:
 - how to disable touch (using only pencil), if not possible then how to assign touch to unuseful tool?
 - how long on battery with projector?
 
-## KRITA
-Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is also more CPU intensive (depends on the brush AFAIK).
+
 
 ## OPEN STAGE CONTROL
 
@@ -100,7 +105,7 @@ open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-butto
 - use tof - tats to send to pd (https://github.com/SofaPirate/AsciiMassage)
 - pd sampler (mtl) doesnt work, try with pd048 or simply use .coll text file
 
-## BUG
+## CALIBRATION
 
 Pen will need calibration when using another ratio (16:9)
 
@@ -120,10 +125,10 @@ c (right) - """
 e (top)
 f (bottom)
 
-xinput set-prop "16" 'Coordinate Transformation Matrix' a, 0.0, c, 0.0, e, f, 0.0, 0.0, 1.0
+xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' a, 0.0, c, 0.0, e, f, 0.0, 0.0, 1.0
 
 Example 1080p:
-xinput set-prop "16" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0
+xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0
 
 Reset:
 xinput set-prop "16" 'Coordinate Transformation Matrix' 1.000000, 0.000000, 0.000000, 0.000000, 1.000000, 0.000000, 0.000000, 0.000000, 1.000000

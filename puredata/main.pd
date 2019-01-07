@@ -1,4 +1,4 @@
-#N canvas 1 58 2158 1381 10;
+#N canvas 1 58 1918 1021 10;
 #X declare -path pdmtl;
 #X declare -lib zexy;
 #X declare -lib comport;
@@ -302,9 +302,9 @@
 #X obj 14 56 netreceive -u -b;
 #X obj 13 200 unpack f f f;
 #X obj 11 225 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.11836e+06 256;
 #X obj 16 250 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1.54796e+07 256;
 #X obj 21 275 nbx 15 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256;
 #X msg 14 31 listen 3335;
@@ -349,7 +349,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -, f 5;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 13882 0;
+-1 -1 13982 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -, f 5;
 #X obj 687 372 r jitbang;
@@ -15103,7 +15103,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 340 224 pd cpu;
 #X obj 340 246 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 9 256;
+-45076 -262144 -1 7 256;
 #N canvas 124 121 1000 510 sampler 0;
 #X obj 51 27 bng 15 250 50 0 empty empty empty 17 7 0 10 -4034 -1 -1
 ;
@@ -17912,7 +17912,7 @@ first beat.;
 #X connect 22 0 21 0;
 #X restore 334 82 pd BPMtap;
 #X obj 50 50 hradio 40 1 0 4 \$0-dummysend \$0-beatmonitor 1__2__3__4
-14 24 1 24 -1 -4034 -1 1;
+14 24 1 24 -1 -4034 -1 3;
 #X text 51 122 A BPM indicator GUI with responsive surface: reset BPM
 sync to the One.;
 #X text 333 59 not used now:;
@@ -18691,7 +18691,7 @@ by double-clicking their oscilloscope regions!;
 #X connect 65 2 67 0;
 #X restore 22 110 pd openstagecontrol;
 #X obj 555 59 adc~ 1 4;
-#N canvas 980 466 1110 926 osckrita 0;
+#N canvas 621 153 1110 926 osckrita 1;
 #X obj 70 254 netsend -u -b;
 #X obj 91 194 list prepend send;
 #X obj 91 218 list trim;
@@ -18753,7 +18753,12 @@ by double-clicking their oscilloscope regions!;
 #X floatatom 578 22 5 0 0 0 - - -, f 5;
 #X obj 604 48 osc~ 0.99;
 #X obj 367 90 metro 80;
-#X obj 528 45 metro 80;
+#X msg 909 323;
+#X obj 908 272 oscformat /next_frame;
+#X msg 902 243 1;
+#X obj 528 45 metro 600;
+#X obj 155 714 oscformat /show_color_selector;
+#X msg 155 684 1;
 #X connect 1 0 2 0;
 #X connect 2 0 0 0;
 #X connect 3 0 4 0;
@@ -18809,14 +18814,18 @@ by double-clicking their oscilloscope regions!;
 #X connect 49 0 52 0;
 #X connect 49 1 53 0;
 #X connect 50 0 49 0;
-#X connect 51 0 57 0;
+#X connect 51 0 60 0;
 #X connect 52 0 44 0;
 #X connect 53 0 43 0;
-#X connect 54 0 57 1;
+#X connect 54 0 60 1;
 #X connect 55 0 50 0;
 #X connect 56 0 14 0;
 #X connect 56 0 41 0;
-#X connect 57 0 50 0;
+#X connect 58 0 11 0;
+#X connect 59 0 58 0;
+#X connect 60 0 59 0;
+#X connect 61 0 11 0;
+#X connect 62 0 61 0;
 #X restore 317 12 pd osckrita;
 #X connect 12 0 13 0;
 #X connect 17 0 18 0;
