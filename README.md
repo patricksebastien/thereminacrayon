@@ -50,7 +50,9 @@ Preset 01:
 The open theremin is configured in MIDI mode. Not using the hardware rx/tx connection, we need a way to send the serial midi to pd. The included ttymidi (fixed a problem of linkage to pthread) is doing exactly this job (read midi serial -> alsa midi -> pd).
 
 Debug:
-./ttymidi -s /dev/ttyACM0 -v
+./ttymidi -s /dev/ttyACM1 -v
+
+In this case the open theremin is booting on ttyACM1, ttyACM0 is the IO (arduino with the buttons and pots).
 
 ## XINPUTOSC
 

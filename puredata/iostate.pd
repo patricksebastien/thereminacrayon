@@ -1,0 +1,18 @@
+#N canvas 1 58 450 300 10;
+#X obj 161 60 inlet;
+#X obj 211 228 s ion\$1db;
+#X obj 41 227 s ion\$1;
+#X obj 163 104 change;
+#X obj 221 85 sel 0;
+#X obj 222 109 input.double.click 300;
+#X obj 222 132 t b;
+#X obj 163 150 b;
+#X obj 91 227 s ion\$1t;
+#X connect 0 0 3 0;
+#X connect 3 0 4 0;
+#X connect 3 0 2 0;
+#X connect 4 0 5 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
+#X connect 7 0 8 0;

@@ -29,11 +29,11 @@ wmctrl -r main.pd -t 3 &
 wmctrl -r tac.kra -t 1 &
 #wmctrl -r main.pd -b toggle,fullscreen &
 wmctrl -r "Open Stage Control v0.40.3" -t 2 &
-xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0 &
-xrandr -s 1920x1080
+#xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0 &
+#xrandr -s 1920x1080
 /home/psc/11h11/thereminacrayon/ttymidi/ttymidi -s /dev/ttyACM1 &
 sleep 2
 aconnect 130:0 129:0 &
-#TODO autoconnect ttymidi to pd
 aconnect UA-25EX:0 Virtual Raw MIDI 4-0:0
 aconnect UA-25EX:0 Pure Data:0
+#TODO autoconnect ttymidi to pd

@@ -1,4 +1,4 @@
-#N canvas 123 62 1005 652 10;
+#N canvas 178 99 1981 1340 10;
 #N canvas 428 75 606 426 stuff 0;
 #X text 52 321 creating-order in alfaloop.pd: [pd stuff] / [engine]
 / [pd pd settings] / [pd ctl_huelle] / keys_midi activ/passive / show:keys_midi
@@ -3122,8 +3122,8 @@ connect 0 0 1 0 \; pd-\$2-latencyHome connect 2 0 3 0 \;;
 #N canvas 0 50 450 300 cpu_load 0;
 #X obj 100 100 cnv 12 105 14 empty \$0-settingsFont empty 108 10 0
 11 -262144 -262144 0;
-#X obj 100 101 cnv 1 28 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
-cpu:24% 111 6 0 10 -99865 -262144 0;
+#X obj 100 101 cnv 1 8 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
+cpu:4% 111 6 0 10 -99865 -262144 0;
 #X obj 100 100 cnv 4 4 14 empty \$0-settingsFont empty 108 10 0 11
 -262144 -262144 0;
 #X obj 100 100 cnv 3 3 14 empty \$0-settingsBg empty 20 12 0 14 -99865
@@ -3271,8 +3271,8 @@ mono 5 9 0 10 -262144 -1 0;
 #X coords 0 -1 1 1 662 239 2 0 0;
 #X restore 0 336 pd settings;
 #N canvas 113 114 664 640 ctl_huelle 0;
-#X obj 0 19 midis 1004;
-#X obj 0 0 clearall Midi 1004;
+#X obj 0 19 keys 1004;
+#X obj 0 0 clearall Key 1004;
 #X coords 0 -1 1 1 306 192 2 0 0;
 #X restore 676 382 pd ctl_huelle;
 #N canvas 0 50 611 453 ctl_panel 0;
@@ -3350,32 +3350,32 @@ mono 5 9 0 10 -262144 -1 0;
 #X msg 278 311 \; \$1-keyStatusCanvas color 0 10;
 #X obj 100 100 cnv 15 101 25 empty \$0-keyStatusCanvas keys 32 9 0
 10 -262144 -233017 0;
-#X obj 106 108 cnv 1 17 17 empty \$0-keyIconIn empty 20 12 0 14 -1
+#X obj 106 108 cnv 1 17 17 empty \$0-keyIconIn empty 20 12 0 14 -233017
 -262144 0;
 #X obj 107 109 cnv 10 15 15 empty empty empty 20 12 0 14 -262144 -262144
 0;
-#X obj 111 112 cnv 1 1 9 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 116 113 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 117 112 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 115 117 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 116 118 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 117 119 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 118 120 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 115 114 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 114 115 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 113 116 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
-#X obj 112 117 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -1 -262144
-0;
+#X obj 111 112 cnv 1 1 9 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 116 113 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 117 112 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 115 117 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 116 118 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 117 119 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 118 120 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 115 114 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 114 115 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 113 116 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
+#X obj 112 117 cnv 1 1 1 empty \$0-keyIconIn empty 20 12 0 14 -233017
+-262144 0;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 1 1 3 0;
@@ -3390,10 +3390,10 @@ mono 5 9 0 10 -262144 -1 0;
 #N canvas 228 50 558 384 showmidi 0;
 #X obj 160 26 sel 1 0;
 #X obj 6 0 hradio 18 1 0 5 empty empty empty 0 -8 0 10 -262144 -1 -1
-4;
+2;
 #X obj 38 79 noguitgl;
 #X obj 6 63 t b;
-#X obj 0 0 cnv 15 101 18 \$0-switchCanvas2 \$0-switchCanvas2In midi
+#X obj 0 0 cnv 15 101 18 \$0-switchCanvas2 \$0-switchCanvas2In keys
 72 9 0 10 -262144 -1 0;
 #X obj 0 0 cnv 15 18 18 \$0-switchCanvas \$0-switchCanvasIn show: 5
 9 0 10 -262144 -128992 0;
@@ -3418,62 +3418,75 @@ label \$1;
 #X coords 0 -1 1 1 101 18 2 0 0;
 #X restore 881 356 pd showmidi;
 #N canvas 66 398 472 295 info_huelle 0;
-#X obj 0 0 info/inputOutputinfo 0;
+#X obj 0 0 info/loopinfo 0;
 #X coords 0 -1 1 1 442 285 2 0 0;
 #X restore 528 34 pd info_huelle;
 #X obj 646 1 bangctl2 themeLight light \$0;
 #X obj 858 1 numbers2 themeFont font 0 22 \$0;
-#X text 742 585 Marco Baumgartner 30/11/2015;
-#X obj 138 661 f \$0;
-#X msg 138 694 \; \$1-rec_ctl 127 \;;
-#X obj 138 615 r rectog;
-#X obj 138 636 b;
-#X msg 243 698 \; \$1-rec_ctl 127 \;;
-#X msg 373 638 \; \$1-feedback_ctl 0 \;;
-#X obj 143 577 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X text 815 607 Marco Baumgartner 30/11/2015;
+#X obj 18 657 f \$0;
+#X msg 18 690 \; \$1-rec_ctl 127 \;;
+#X obj 18 611 r rectog;
+#X obj 18 632 b;
+#X obj 51 635 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 633 661 f \$0;
+#X obj 633 636 b;
+#X obj 638 577 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 212 592 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 633 614 r overon;
+#X msg 633 694 \; \$1-over_ctl 127 \;;
+#X obj 753 661 f \$0;
+#X obj 753 636 b;
+#X obj 758 577 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X msg 373 698 \; \$1-feedback_ctl 127 \;;
-#X obj 240 580 r reset;
-#X obj 242 597 b;
-#X obj 243 616 f \$0;
-#X msg 260 635 \; \$1-rec_ctl 127 \; \$1-feedback_ctl 0 \;;
-#X obj 578 661 f \$0;
-#X obj 578 636 b;
-#X obj 583 577 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 578 614 r overon;
-#X msg 578 694 \; \$1-over_ctl 127 \;;
-#X obj 698 661 f \$0;
-#X obj 698 636 b;
-#X obj 703 577 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 698 613 r overoff;
-#X msg 698 694 \; \$1-over_ctl 0 \;;
-#X obj 243 672 pipe 200;
-#X obj 373 615 pipe 401;
-#X obj 373 675 pipe 601;
+#X obj 753 613 r overoff;
+#X msg 753 694 \; \$1-over_ctl 0 \;;
+#X msg 123 689 \; \$1-rec_ctl 127 \;;
+#X obj 92 588 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X msg 253 694 \; \$1-feedback_ctl 127 \;;
+#X obj 123 567 r reset;
+#X obj 123 587 b;
+#X obj 123 612 f \$0;
+#X msg 131 633 \; \$1-rec_ctl 127 \;;
+#X obj 123 666 pipe 200;
+#X obj 253 670 pipe 1002;
+#X obj 166 589 pipe 401;
+#X obj 237 613 line 127;
+#X floatatom 88 626 5 0 0 0 - - -, f 5;
+#X msg 233 636 \; 1004-feedback_ctl \$1 \;;
+#X msg 263 591 0 200;
+#X obj 234 590 t b;
+#X obj 303 590 delay 201;
+#X msg 303 610 set 127;
 #X connect 26 0 27 0;
 #X connect 28 0 29 0;
 #X connect 29 0 26 0;
-#X connect 32 0 29 0;
-#X connect 33 0 37 0;
-#X connect 35 0 36 0;
-#X connect 36 0 37 0;
-#X connect 37 0 38 0;
-#X connect 37 0 49 0;
-#X connect 37 0 50 0;
-#X connect 37 0 51 0;
-#X connect 39 0 43 0;
-#X connect 40 0 39 0;
-#X connect 41 0 40 0;
-#X connect 42 0 40 0;
-#X connect 44 0 48 0;
-#X connect 45 0 44 0;
-#X connect 46 0 45 0;
-#X connect 47 0 45 0;
-#X connect 49 0 30 0;
-#X connect 50 0 31 0;
-#X connect 51 0 34 0;
+#X connect 30 0 29 0;
+#X connect 31 0 35 0;
+#X connect 32 0 31 0;
+#X connect 33 0 32 0;
+#X connect 34 0 32 0;
+#X connect 36 0 40 0;
+#X connect 37 0 36 0;
+#X connect 38 0 37 0;
+#X connect 39 0 37 0;
+#X connect 42 0 46 0;
+#X connect 44 0 45 0;
+#X connect 45 0 46 0;
+#X connect 46 0 47 0;
+#X connect 46 0 48 0;
+#X connect 46 0 49 0;
+#X connect 46 0 50 0;
+#X connect 46 0 52 0;
+#X connect 48 0 41 0;
+#X connect 49 0 43 0;
+#X connect 50 0 55 0;
+#X connect 51 0 53 0;
+#X connect 54 0 51 0;
+#X connect 55 0 54 0;
+#X connect 55 0 56 0;
+#X connect 56 0 57 0;
+#X connect 57 0 51 0;
 #X coords 0 -1 1 1 983 575 2 0 0;
