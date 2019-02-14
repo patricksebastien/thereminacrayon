@@ -8,10 +8,10 @@
 /eq3/mid list 0.95;
 /eq3/high list 0.83;
 /sfi-help/samples clear;
-/sfi-help/samples list 0 jap.wav;
-/sfi-help/samples list 1 mia.wav;
-/sfi-help/samples list 2 jeu1.wav;
-/sfi-help/samples list 3 jeu2.wav;
+/sfi-help/samples list 0 ../../samples/jap.wav;
+/sfi-help/samples list 1 ../../samples/mia.wav;
+/sfi-help/samples list 2 ../../samples/jeu1.wav;
+/sfi-help/samples list 3 ../../samples/jeu2.wav;
 /sampleFiler/samples clear;
 /sdrum/samples clear;
 /sdrum/samples list 0 ../../samples/kicks/WAV/01 Traditional Kicks/trad_kick_01_C.wav
