@@ -32,10 +32,6 @@ void setup() {
 void loop() {
 
 
-  // SEND A PACKET EVERY 100 ms:
-  if ( millis() - lastTimeMassageSent >= 100 ) {
-    lastTimeMassageSent = millis();
-
     /// Begins the sending of a message.
     outbound.beginPacket("tac");
   
@@ -51,13 +47,14 @@ void loop() {
     outbound.addInt(analogRead(A3));
     outbound.addInt(analogRead(A4));
     outbound.addInt(digitalRead(0));
+    
     for(i = 2; i < 14; i++) {
       outbound.addInt(digitalRead(i));
     }
     
     /// End and stream the massage packet:
     outbound.streamPacket(&Serial);
-  }
+    Serial.flush();
  
 
 }

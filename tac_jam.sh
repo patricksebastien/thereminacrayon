@@ -16,8 +16,8 @@ a2jmidid &
 bitwig-studio &
 #flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
 krita --nosplash /home/psc/11h11/thereminacrayon/krita/tac.kra &
-pd -rt -jack -channels 4 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
-open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
+/home/psc/11h11/pd049/bin/pd -rt -jack -channels 4 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
+open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme dark alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
 touchegg &
 /home/psc/11h11/thereminacrayon/xinputOSC.sh &
 #/home/psc/11h11/thereminacrayon/spAccel.py &
@@ -36,4 +36,4 @@ sleep 2
 aconnect 130:0 129:0 &
 aconnect UA-25EX:0 Virtual Raw MIDI 4-0:0
 aconnect UA-25EX:0 Pure Data:0
-#TODO autoconnect ttymidi to pd
+aconnect ttymidi:0 Pure Data:0

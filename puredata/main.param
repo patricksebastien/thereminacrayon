@@ -1,0 +1,22 @@
+/noisegate/thresold list 2.7;
+/noisegate/attack float 100;
+/noisegate/decay float 100;
+/noisegate2/thresold float 50;
+/noisegate2/attack float 100;
+/noisegate2/decay float 100;
+/eq3/low list 1;
+/eq3/mid list 0.95;
+/eq3/high list 0.83;
+/sfi-help/samples clear;
+/sfi-help/samples list 0 jap.wav;
+/sfi-help/samples list 1 mia.wav;
+/sfi-help/samples list 2 jeu1.wav;
+/sfi-help/samples list 3 jeu2.wav;
+/sampleFiler/samples clear;
+/sdrum/samples clear;
+/sdrum/samples list 0 ../../samples/kicks/WAV/01 Traditional Kicks/trad_kick_01_C.wav
+;
+/sdrum/samples list 1 ../../samples/kicks/WAV/02 Minimal Kicks/min_kick_01_C.wav
+;
+/sdrum/samples list 2 ../../samples/kicks/WAV/03 Subby Kicks/sub_kick_01_C.wav
+;
