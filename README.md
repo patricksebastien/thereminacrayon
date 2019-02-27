@@ -6,12 +6,12 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - how long on battery (surface pro when doing krita and pd)
 - how long on battery for the projector (even built-in)
 - calculate the consommation of the projector
-- should I use a cromecast thing for wifi (but microphone needs to be connected anyway)
-- finish the theremin a crayon (12 pianos keys, case)
+- add 4 pots of theremin
 - portable roadcase + amp ?
 - develop patch (music and krita)
 - krita black screen on clean
-- read theremin midi http://www.gaudi.ch/OpenTheremin/index.php/opentheremin-v3/midi-implementation - install and use http://projectgus.github.com/hairless-midiserial/
+- document setup
+- 
 
 
 ## SETUP
@@ -29,13 +29,14 @@ Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage cont
 
 ## GUIDE
 - install ubuntu-studio
-- sudoers nopasswd
+- %sudo  ALL=(ALL) NOPASSWD:ALL
 - compile pd with jack
 - sudo pip install cython
 - sudo apt install pip
 - sudo apt install easystroke
 - setup easystroke (ie: python easystroke_2osc.py 5904 /fx volume 3)
-- flatpak gimp install
+- install appimage krita
+- install open stage control
 - sudo apt install touchegg
 - sudo apt install xdotool
 - autostart everything via tac.sh
