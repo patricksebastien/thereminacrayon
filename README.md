@@ -34,12 +34,17 @@ Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage cont
 - sudo pip install cython
 - sudo apt install pip
 - sudo apt install easystroke
+- sudo apt install wmctrl
 - setup easystroke (ie: python easystroke_2osc.py 5904 /fx volume 3)
 - install appimage krita
 - install open stage control
 - sudo apt install touchegg
 - sudo apt install xdotool
 - autostart everything via tac.sh
+- add 4 workspaces
+- nano /etc/default/rtirq (remove snd)
+- nano /etc/default/grub (add GRUB_CMDLINE_LINUX="threadirqs")
+
 
 ## FCB1010 (midi pedal)
 Using the UNO firmware with the dedicated software to setup the pedal. Using the stompbox mode (upper row is boolean), Here's the current config:
