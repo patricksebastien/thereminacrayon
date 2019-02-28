@@ -22,16 +22,20 @@ Deadline: 2.902ms
 qjackctl load patchbay (bitwig to pd)
 
 ### STARTUP
-./tac.sh
+./tac.sh - with projector (1280x720)
+./tac_jam.sh - no projector (full resolution)
 
 ### LIMITATION
-Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends.
+Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends (OR better tweaks, not using open stage control). TODO: test with i7.
 
 ## GUIDE
 - install ubuntu-studio
 - %sudo  ALL=(ALL) NOPASSWD:ALL
 - compile pd with jack
+- sudo apt install liblo
 - sudo pip install cython
+- sudo pip install pyliblo
+- sudo pip install pyudev
 - sudo apt install pip
 - sudo apt install easystroke
 - sudo apt install wmctrl
@@ -47,7 +51,7 @@ Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage cont
 
 
 ## FCB1010 (midi pedal)
-Using the UNO firmware with the dedicated software to setup the pedal. Using the stompbox mode (upper row is boolean), Here's the current config:
+Using the UNO firmware with the dedicated software to setup the pedal. Here's the current config:
 
 Preset 01:
 @TODO
@@ -101,8 +105,6 @@ Questions:
 - how to disable touch (using only pencil), if not possible then how to assign touch to unuseful tool?
 - how long on battery with projector?
 
-
-
 ## OPEN STAGE CONTROL
 
 Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to send and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:
@@ -118,9 +120,8 @@ open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-butto
 - read serial in pd from uno theremin - prefering the midi firmware of uno + serial to midi
 - using rx-tx pin on arduino with open theremin (only pinb 0 is available) - meh
 - start pd with basic patch (sending osc xinput - serial comport etc)
-- configure midi in with foot pedal
+- configure midi in with foot pedal (fcb1010)
 - use tof - tats to send to pd (https://github.com/SofaPirate/AsciiMassage)
-- pd sampler (mtl) doesnt work, try with pd048 or simply use .coll text file
 
 ## CALIBRATION
 
