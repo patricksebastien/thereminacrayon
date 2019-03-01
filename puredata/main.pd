@@ -339,7 +339,7 @@
 #X obj 440 589 / 1000;
 #X floatatom 440 611 5 0 0 0 - - -;
 #X obj 443 643 hsl 150 15 0.01 1 1 0 empty empty empty -2 -8 0 10 -262144
--1 -1 14146 0;
+-1 -1 12599 0;
 #X obj 590 459 r progress;
 #X floatatom 590 480 5 0 0 0 - - -;
 #X obj 687 372 r jitbang;
@@ -738,7 +738,7 @@
 #X obj 109 127 vsl 12 64 0 64 0 1 \$0-N1 \$0-N1-r N 0 -8 1 8 -262144
 -1 -1 1781 1;
 #X obj 163 127 vsl 12 64 12 96 0 1 \$0-C1 \$0-C1-r C 0 -8 1 8 -262144
--1 -1 0 1;
+-1 -1 2685 1;
 #X obj 136 127 vsl 12 64 1 64 0 1 \$0-D1 \$0-D1-r D 0 -8 1 8 -262144
 -1 -1 1100 1;
 #X obj 293 45 r psalgoc1;
@@ -16396,7 +16396,7 @@ f f f f f f f f f f f f;
 #X connect 7 0 6 0;
 #X restore 362 32 pd cpu;
 #X obj 362 54 nbx 3 18 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 18
--45076 -262144 -1 12 256;
+-45076 -262144 -1 15 256;
 #N canvas 704 747 1038 338 looper 0;
 #X msg 131 155 pd~ stop;
 #X obj 124 76 loadbang;
@@ -17362,8 +17362,7 @@ decay 105 7 0 8 -262144 -1 -1 990 1;
 #X connect 3 0 1 0;
 #X coords 0 -1 1 1 160 40 2 100 250;
 #X restore 20 90 pd scope;
-#N canvas 0 50 225 343 open-settings 0;
-#X obj 67 55 cyclone/MouseState;
+#N canvas 1 118 225 343 open-settings 0;
 #X obj 27 127 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X msg 27 84 1;
@@ -17377,20 +17376,21 @@ decay 105 7 0 8 -262144 -1 -1 990 1;
 #X obj 27 28 inlet;
 #X obj 27 256 sel 1;
 #X msg 27 286 \; pd-input-settings vis 1;
-#X connect 0 0 3 0;
-#X connect 1 0 8 0;
-#X connect 2 0 1 0;
-#X connect 3 0 9 0;
-#X connect 4 0 5 0;
-#X connect 4 0 11 0;
-#X connect 5 0 4 1;
-#X connect 6 0 7 0;
-#X connect 7 0 4 1;
-#X connect 8 0 4 0;
-#X connect 8 0 6 0;
+#X obj 67 55 MouseState;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 2 0 8 0;
+#X connect 3 0 4 0;
+#X connect 3 0 10 0;
+#X connect 4 0 3 1;
+#X connect 5 0 6 0;
+#X connect 6 0 3 1;
+#X connect 7 0 3 0;
+#X connect 7 0 5 0;
+#X connect 8 0 0 0;
 #X connect 9 0 1 0;
-#X connect 10 0 2 0;
-#X connect 11 0 12 0;
+#X connect 10 0 11 0;
+#X connect 12 0 2 0;
 #X restore 25 143 pd open-settings;
 #X obj 132 193 s~ processedinput;
 #N canvas 220 264 557 281 input-settings-help 0;
@@ -19472,7 +19472,7 @@ by double-clicking their oscilloscope regions!;
 #X obj 705 306 hsl 100 15 0 1 0 0 /eq3/high /eq3/high_ high 105 7 0
 8 -262144 -1 -1 8217 1;
 #X obj 764 351 hsl 100 15 0 1 0 0 /eq3/mid /eq3/mid mid 105 7 0 8 -262144
--1 -1 9900 1;
+-1 -1 9405 1;
 #X obj 645 350 hsl 100 15 0 1 0 0 /eq3/low /eq3/low_ low 105 7 0 8
 -262144 -1 -1 9900 1;
 #X obj 470 18 route volumeadc1osc;
@@ -20211,7 +20211,7 @@ file);
 #X obj 576 1171 sel 0;
 #X obj 628 1179 t b;
 #X obj 609 164 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 609 184 hsl 128 15 0 1 0 0 empty empty empty -1 1 0 10 -262144
 -1 -1 0 1;
 #X obj 653 672 phiscale 0 1023 0.0001 1;
@@ -20496,7 +20496,7 @@ file);
 #X obj 576 1171 sel 0;
 #X obj 628 1179 t b;
 #X obj 609 164 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 1 1;
+-1 -1 0 1;
 #X obj 609 184 hsl 128 15 0 1 0 0 empty empty empty -1 1 0 10 -262144
 -1 -1 0 1;
 #X obj 653 672 phiscale 0 1023 0.0001 1;

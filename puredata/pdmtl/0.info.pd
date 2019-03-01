@@ -49,7 +49,7 @@ http://wiki.dataflow.ws/PdMtlAbstractions/Installation;
 #X text 23 182 Browse the pdmtl abstractions:;
 #X obj 31 494 tof/folderpanel;
 #X obj 28 395 zexy/msgfile;
-#X obj 27 345 cyclone/MouseState;
+#X obj 27 345 MouseState;
 #X obj 160 346 ggee/getdir;
 #X obj 159 396 hcs/folder_list;
 #X obj 160 448 iemlib/dollarg;

@@ -11,8 +11,6 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - develop patch (music and krita)
 - krita black screen on clean
 - document setup
-- 
-
 
 ## SETUP
 ### JACK
@@ -36,11 +34,14 @@ Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage cont
 - sudo pip install cython
 - sudo pip install pyliblo
 - sudo pip install pyudev
+- sudo pip3 install python-osc
 - sudo apt install pip
 - sudo apt install easystroke
 - sudo apt install wmctrl
 - setup easystroke (ie: python easystroke_2osc.py 5904 /fx volume 3)
-- install appimage krita
+- sudo add-apt-repository ppa:kritalime/ppa
+- sudo apt-get update
+- sudo apt-get install krita
 - install open stage control
 - sudo apt install touchegg
 - sudo apt install xdotool
@@ -48,6 +49,7 @@ Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage cont
 - add 4 workspaces
 - nano /etc/default/rtirq (remove snd)
 - nano /etc/default/grub (add GRUB_CMDLINE_LINUX="threadirqs")
+- run realtimeconfigquickscan - sudo nano /etc/sysctl.conf (fs.inotify.max_user_watches = 524288)
 
 
 ## FCB1010 (midi pedal)
@@ -89,6 +91,9 @@ Script doing this job is: easystrokje_2osc.py
 
 ## KRITA
 Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is also more CPU intensive (depends on the brush AFAIK).
+
+copy krita/thereminacrayon.desktop and krita/thereminacrayon in ~./share/local/krita/pykrita
+activate the scripts in settings -> Python Plugin Manager
 
 ### CONFIGURATION
 Disable touch painting (general)

@@ -78,7 +78,7 @@
 #X obj 302 629 t a a;
 #X obj 146 496 t a a a a;
 #X obj 468 510 - 1;
-#X obj 689 299 cyclone/MouseState;
+#X obj 689 299 MouseState;
 #X obj 396 513 ./listOp;
 #X obj 397 588 ./rgbToNum;
 #X obj 234 574 ./rgbToNum;

@@ -5,7 +5,7 @@
 # stop thread when krita quits (needs QT binding?)
 
 # DEPS
-# pythonosc (pip3 install pythonosc)
+# pythonosc (pip3 install python-osc)
 
 import sys
 import threading

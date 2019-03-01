@@ -7,7 +7,7 @@
 #X msg 142 208 175;
 #X msg 187 207 300;
 #X obj 31 235 mtl/doubleClick 300;
-#X obj 33 126 cyclone/MouseState;
+#X obj 33 126 MouseState;
 #X obj 32 56 loadbang;
 #X obj 35 156 sel 1;
 #X msg 31 87 poll;

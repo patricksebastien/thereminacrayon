@@ -1,5 +1,5 @@
 #N canvas 415 23 396 413 10;
-#X obj 26 121 cyclone/MouseState;
+#X obj 26 121 MouseState;
 #X msg 26 93 poll;
 #X msg 68 93 nopoll;
 #X obj 26 41 t b b;

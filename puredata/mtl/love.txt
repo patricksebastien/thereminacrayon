@@ -32,7 +32,7 @@ cyclone/match lists
 cyclone/midiformat midi
 cyclone/midiparse midi
 cyclone/mousefilter ui
-cyclone/MouseState ui
+MouseState ui
 cyclone/mtr sequencing
 cyclone/onebang initialization routing
 cyclone/overdrive~ fx~

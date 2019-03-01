@@ -1,3 +1,11 @@
+#TODO
+#set intel turbo to 1
+#cat /sys/devices/system/cpu/intel_pstate/no_turbo
+#TRY with ^ 1 above and:
+freq=3300000; for cpu_num in {0..3}; do sudo cpufreq-set --cpu "$cpu_num" --governor performance --max "$freq" --min "$freq"; done
+#OR ^ 0 above and same freq...
+#you can use ubuntustudio-controls to set no_turbo
+# GO
 sudo killall /opt/bitwig-studio/bin/BitwigStudio
 sudo killall pd
 sudo killall bitwig
@@ -27,7 +35,7 @@ sudo modprobe snd_virmidi midi_devs=1 &
 a2jmidid &
 bitwig-studio &
 #flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
-/home/psc/11h11/softs/krita-4.1.7-x86_64.appimage --nosplash /home/psc/11h11/thereminacrayon/krita/tac.kra &
+krita --nosplash /home/psc/11h11/thereminacrayon/krita/tac.kra &
 /home/psc/11h11/pd049/bin/pd -rt -jack -channels 4 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
 open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme dark alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
 touchegg &
