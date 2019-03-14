@@ -1,12 +1,12 @@
-killall a2jmidid
-killall /opt/bitwig-studio/bin/BitwigStudio
-killall pd
-killall bitwig
-killall krita
-killall /usr/lib/open-stage-control/open-stage-control
-killall /home/psc/11h11/thereminacrayon/xinputOSC/xinputOSC
-killall /usr/bin/python
-killall touchegg
-killall ttymidi
-killall /home/psc/11h11/thereminacrayon/ttymidi/ttymidi
-xrandr -s 2160x1440
+sudo killall a2jmidid
+sudo killall /opt/bitwig-studio/bin/BitwigStudio
+sudo killall pd
+sudo killall bitwig
+sudo killall krita
+sudo killall /usr/lib/open-stage-control/open-stage-control
+sudo killall /home/psc/11h11/thereminacrayon/xinputOSC/xinputOSC
+sudo killall ttymidi
+sudo killall /home/psc/11h11/thereminacrayon/ttymidi/ttymidi
+sudo killall /usr/bin/python
+sudo killall touchegg
+sudo killall carla

@@ -1,23 +1,48 @@
 <!DOCTYPE patchbay>
-<patchbay version="0.4.5" name="patchbay">
+<patchbay name="patchbay" version="0.4.5">
  <output-sockets>
-  <socket type="jack-audio" name="Bitwig Studio 1" client="Bitwig Studio" exclusive="off">
+  <socket name="Seaboard RISE 1" type="alsa-midi" exclusive="off" client="Seaboard RISE">
+   <plug>Seaboard RISE MIDI 1</plug>
+  </socket>
+  <socket name="Carla 1" type="jack-audio" exclusive="off" client="Carla">
+   <plug>audio-out1</plug>
+  </socket>
+  <socket name="Carla 2" type="jack-audio" exclusive="off" client="Carla">
+   <plug>audio-out2</plug>
+  </socket>
+  <socket name="Bitwig Studio 1" type="jack-audio" exclusive="off" client="Bitwig Studio">
    <plug>Speakers-L</plug>
   </socket>
-  <socket type="jack-audio" name="Bitwig Studio 2" client="Bitwig Studio" exclusive="off">
+  <socket name="Bitwig Studio 2" type="jack-audio" exclusive="off" client="Bitwig Studio">
    <plug>Speakers-R</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket type="jack-audio" name="pure_data 1" client="pure_data" exclusive="off">
+  <socket name="pure_data 3" type="jack-audio" exclusive="off" client="pure_data">
+   <plug>input4</plug>
+  </socket>
+  <socket name="pure_data 4" type="jack-audio" exclusive="off" client="pure_data">
+   <plug>input5</plug>
+  </socket>
+  <socket name="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1" type="alsa-midi" exclusive="off" client="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24:0">
+   <plug>Seaboard RISE:Seaboard RISE MIDI 1 24:0</plug>
+  </socket>
+  <socket name="Virtual Raw MIDI 6- 1" type="alsa-midi" exclusive="off" client="Virtual Raw MIDI 6-2">
+   <plug>VirMIDI 6-2</plug>
+  </socket>
+  <socket name="pure_data 1" type="jack-audio" exclusive="off" client="pure_data">
    <plug>input2</plug>
   </socket>
-  <socket type="jack-audio" name="pure_data 2" client="pure_data" exclusive="off">
+  <socket name="pure_data 2" type="jack-audio" exclusive="off" client="pure_data">
    <plug>input3</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
+  <cable output="Seaboard RISE 1" type="alsa-midi" input="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1"/>
+  <cable output="Seaboard RISE 1" type="alsa-midi" input="Virtual Raw MIDI 6- 1"/>
+  <cable output="Carla 1" type="jack-audio" input="pure_data 3"/>
+  <cable output="Carla 2" type="jack-audio" input="pure_data 4"/>
   <cable output="Bitwig Studio 1" type="jack-audio" input="pure_data 1"/>
   <cable output="Bitwig Studio 2" type="jack-audio" input="pure_data 2"/>
  </cables>

@@ -11,24 +11,31 @@ A theremin with a Surface Pro (custom instrument to draw and play music simultan
 - develop patch (music and krita)
 - krita black screen on clean
 - document setup
+- fix gac
 
 ## SETUP
-### JACK
+### JACK - bitwig jam without glitch
 44100 - 128 - 2 (hw:UA25EX)\
 Latency: 21.0884ms round-trip\
 Deadline: 2.902ms
 qjackctl load patchbay (bitwig to pd)
 
+### JACK - krita pd
+44100 - 64 - 3 (hw:UA25EX)\
+Latency: 16.7884ms round-trip\
+
+
 ### STARTUP
 ./tac.sh - with projector (1280x720)
-./tac_jam.sh - no projector (full resolution)
+./jam.sh - no projector (full resolution)
 
 ### LIMITATION
-Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends (OR better tweaks, not using open stage control). TODO: test with i7.
+Bitwig drums are CPU hungry causing glitch if using gimp, krita, open stage control... The final setup should be pd + krita + open stage control and loading bitwig only for jamming with friends (OR better tweaks, not using open stage control).
 
 ## GUIDE
 - install ubuntu-studio
 - %sudo  ALL=(ALL) NOPASSWD:ALL
+- sudo usermod -a -G dialout psc
 - compile pd with jack
 - sudo apt install liblo
 - sudo pip install cython
@@ -87,7 +94,7 @@ There's a script to send this info to pd, but a bit cpu hungry.
 
 Easystoke is configured for gesture recognition with the pencil, but it's very hard to have good result because we need to hold button 2 (second button on the SP3 pencil) while drawing the gesture but NOT touching the screen and NOT going too far from it. Looking for an alternative (maybe reconfirguring the first button of the pencil?)
 
-Script doing this job is: easystrokje_2osc.py
+Script doing this job is: easystroke_2osc.py
 
 ## KRITA
 Krita is better for painting, look in the folder krita README.md for information on the python API. Sadly it is also more CPU intensive (depends on the brush AFAIK).
@@ -115,6 +122,8 @@ Questions:
 Open stage control is a neat electron app that you can use to create UI (fader, toggle, buttons, etc). Using OSC to send and receive it also create a server that you can access with your phone or other computers... Using this software instead of the lacking PD UI (no multitouch support only basic ui). Start it like this:
 
 open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme light alt-buttons responsive-fonts --load pd.json --fullscreen
+
+Glitch a bit when using the full setup...
 
 ## PD TRICKS
 
