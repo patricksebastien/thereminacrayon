@@ -1,0 +1,1 @@
+Arduino UNO firmware for the buttons and pots on the theremin. Pure data sub-patch in [pd io]
