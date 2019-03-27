@@ -10,8 +10,8 @@
 /sfi-help/samples clear;
 /sfi-help/samples list 0 ../../samples/jap.wav;
 /sfi-help/samples list 1 ../../samples/mia.wav;
-/sfi-help/samples list 2 ../../samples/jeu1.wav;
-/sfi-help/samples list 3 ../../samples/jeu2.wav;
+/sfi-help/samples list 2 ../../samples/random/yourintelligence.wav;
+/sfi-help/samples list 3 ../../samples/random/kalimba.wav;
 /sampleFiler/samples clear;
 /sdrum/samples clear;
 /sdrum/samples list 0 ../../samples/kicks/WAV/01 Traditional Kicks/trad_kick_01_C.wav

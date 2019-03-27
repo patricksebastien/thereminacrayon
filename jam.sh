@@ -33,13 +33,14 @@ sudo /etc/init.d/bluetooth stop & # Stop Bluetooth related processes
 sudo /etc/init.d/cups stop & # Stop cups, I don't use a printer when making music
 sudo killall modem-manager # I don't have a modem
 sudo modprobe snd-hrtimer # Load the ALSA high res timer for my MIDI stuff
-#sudo modprobe snd_virmidi midi_devs=1 &
+sudo modprobe snd_virmidi midi_devs=1 &
 #sudo modprobe snd_virmidi &
 bitwig-studio &
 #flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
 #krita --nosplash /home/psc/11h11/thereminacrayon/krita/tac.kra &
 /home/psc/11h11/pd049/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
 open-stage-control --send 127.0.0.1:8000 --osc-port 9000 --theme dark alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
+timemachine -f wav -p /home/psc/11h11/recording/ &
 #carla /home/psc/11h11/thereminacrayon/carla/carla.carxp &
 touchegg &
 /home/psc/11h11/thereminacrayon/xinputOSC.sh &
@@ -53,6 +54,7 @@ wmctrl -r main.pd -t 3 &
 #wmctrl -r main.pd -b toggle,fullscreen &
 wmctrl -r "Open Stage Control" -t 1 &
 wmctrl -r "Carla" -t 2 &
+wmctrl -r "TimeMachine" -t 2 &
 #xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0 &
 #xrandr -s 1920x1080
 /home/psc/11h11/thereminacrayon/ttymidi/ttymidi -s /dev/ttyACM1 &
