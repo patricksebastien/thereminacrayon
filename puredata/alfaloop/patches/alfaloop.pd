@@ -86,12 +86,11 @@
 #X obj 41 186 keyctltank auto-over \$0;
 #X restore 51 64 pd keytank;
 #X restore 251 56 pd ctltanks;
-#N canvas 850 50 536 581 delay 0;
+#N canvas 850 58 536 581 delay 0;
 #X msg 52 82 0;
 #X obj 42 175 *~;
 #X obj 41 518 s~ \$0-fromDelay;
 #X obj 42 134 vd~ \$0-del;
-#X obj 66 404 delwrite~ \$0-del 20000;
 #X obj 42 108 line~;
 #X obj 207 438 throw~ \$0-audioDone;
 #N canvas 693 117 304 361 recGateListening 0;
@@ -687,33 +686,34 @@
 #X obj 66 466 line~;
 #X obj 222 351 line~;
 #X obj 235 222 sinfade;
-#X connect 0 0 5 0;
-#X connect 1 0 13 0;
+#X obj 66 404 delwrite~ \$0-del 60000;
+#X connect 0 0 4 0;
+#X connect 1 0 12 0;
 #X connect 3 0 1 0;
-#X connect 5 0 3 0;
-#X connect 7 0 26 0;
-#X connect 8 0 25 0;
-#X connect 9 0 27 0;
-#X connect 11 0 0 0;
-#X connect 12 0 10 0;
-#X connect 12 0 6 0;
-#X connect 13 0 17 0;
-#X connect 14 0 24 0;
-#X connect 14 1 26 0;
-#X connect 15 0 27 0;
-#X connect 16 0 13 0;
-#X connect 17 0 12 0;
-#X connect 17 0 4 0;
-#X connect 17 0 20 0;
-#X connect 18 0 17 0;
-#X connect 19 0 17 0;
-#X connect 20 0 2 0;
-#X connect 21 0 5 0;
-#X connect 23 0 26 0;
-#X connect 24 0 1 1;
-#X connect 25 0 20 1;
+#X connect 4 0 3 0;
+#X connect 6 0 25 0;
+#X connect 7 0 24 0;
+#X connect 8 0 26 0;
+#X connect 10 0 0 0;
+#X connect 11 0 9 0;
+#X connect 11 0 5 0;
+#X connect 12 0 16 0;
+#X connect 13 0 23 0;
+#X connect 13 1 25 0;
+#X connect 14 0 26 0;
+#X connect 15 0 12 0;
+#X connect 16 0 11 0;
+#X connect 16 0 19 0;
+#X connect 16 0 27 0;
+#X connect 17 0 16 0;
+#X connect 18 0 16 0;
+#X connect 19 0 2 0;
+#X connect 20 0 4 0;
+#X connect 22 0 25 0;
+#X connect 23 0 1 1;
+#X connect 24 0 19 1;
+#X connect 25 0 11 1;
 #X connect 26 0 12 1;
-#X connect 27 0 13 1;
 #X restore 396 134 pd delay;
 #N canvas 611 71 663 306 record_and_play 0;
 #X obj 437 63 t b f;
@@ -725,18 +725,18 @@
 #X obj 40 60 r \$0-maxLengthSmpl;
 #X obj 90 154 s \$0-maxLengthMs;
 #X obj 90 128 / 44.1;
-#X obj 40 112 + 2000;
 #X obj 162 86 samplerate~;
 #X obj 162 63 loadbang;
 #X obj 162 107 / 1000;
-#X connect 1 0 5 0;
+#X obj 40 112 + 2000;
+#X connect 1 0 8 0;
 #X connect 2 0 1 0;
 #X connect 4 0 3 0;
-#X connect 5 0 0 0;
-#X connect 5 0 4 0;
-#X connect 6 0 8 0;
-#X connect 7 0 6 0;
-#X connect 8 0 4 1;
+#X connect 5 0 7 0;
+#X connect 6 0 5 0;
+#X connect 7 0 4 1;
+#X connect 8 0 0 0;
+#X connect 8 0 4 0;
 #X restore 437 37 pd maxTableLength;
 #N canvas 546 265 450 300 start/stop_calc 0;
 #X obj 43 13 r \$0-recStart;
@@ -786,7 +786,7 @@ resize \$2 \; \$1-micenvelope resize \$2 \; \$1-maxLengthDone \$2;
 #N canvas 607 50 489 381 graphics 0;
 #X obj 58 144 cnv 20 128 60 empty \$0-farbtest empty 20 12 0 14 -24198
 -262144 0;
-#X floatatom 58 56 5 0 0 0 - - -, f 5;
+#X floatatom 58 56 5 0 0 0 - - -;
 #X msg -153 56 \; \$1-recBg color 0 \; \$1-overBg color 0 \; \$1-recCanvasDark
 color 13 \; \$1-recCanvasLight color 14 \; \$1-overCanvasDark color
 16 \; \$1-overCanvasLight color 6 \;;
@@ -3017,7 +3017,7 @@ connect 0 0 1 0 \; pd-\$2-latencyHome connect 2 0 3 0 \;;
 #X obj 184 82 catch~ \$0-latencyDone;
 #N canvas 6 241 450 300 \$0-latencyOutput 0;
 #X obj 0 0 inlet~;
-#X obj 0 30 dac~ 1;
+#X obj 0 30 dac~ 0;
 #X connect 0 0 1 0;
 #X restore 185 116 pd \$0-latencyOutput;
 #X connect 0 0 1 0;
@@ -3122,8 +3122,8 @@ connect 0 0 1 0 \; pd-\$2-latencyHome connect 2 0 3 0 \;;
 #N canvas 0 50 450 300 cpu_load 0;
 #X obj 100 100 cnv 12 105 14 empty \$0-settingsFont empty 108 10 0
 11 -262144 -262144 0;
-#X obj 100 101 cnv 1 8 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
-cpu:4% 111 6 0 10 -99865 -262144 0;
+#X obj 100 101 cnv 1 10 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
+cpu:6% 111 6 0 10 -99865 -262144 0;
 #X obj 100 100 cnv 4 4 14 empty \$0-settingsFont empty 108 10 0 11
 -262144 -262144 0;
 #X obj 100 100 cnv 3 3 14 empty \$0-settingsBg empty 20 12 0 14 -99865
@@ -3166,7 +3166,7 @@ label \$1;
 #X coords 0 -1 1 1 18 18 2 100 100;
 #X restore 964 1 pd infosize;
 #X obj 72 64 engine \$0;
-#N canvas 22 399 719 294 settings 0;
+#N canvas 22 399 1485 638 settings 0;
 #X obj 0 0 cnv 15 662 239 empty \$0-settingsBg empty 20 12 0 14 -99865
 -262144 0;
 #X obj 1 0 cnv 15 661 238 empty empty empty 20 12 0 14 -262144 -66577
@@ -3221,8 +3221,8 @@ mono 5 9 0 10 -262144 -1 0;
 -99865 -262144 0;
 #X obj 8 200 hradio 38 1 0 5 \$0-hradio2recCtl empty empty 0 -8 0 10
 -262144 -1 -1 0;
-#X obj 226 60 cnv 15 210 38 empty \$0-delNowCanvas delay:200 6 20 0
-11 -262144 -1 0;
+#X obj 226 60 cnv 15 210 38 empty \$0-delNowCanvas delay:27614 6 20
+0 11 -262144 -1 0;
 #X obj 225 120 cnv 15 212 119 empty \$0-settingsBg fades(over/ducking)
 7 10 0 11 -99865 -262144 0;
 #X obj 226 160 cnv 15 210 38 empty empty empty 20 12 0 14 -262144 -66577
@@ -3250,7 +3250,6 @@ mono 5 9 0 10 -262144 -1 0;
 #X obj 332 20 numbers cFOffset x-offset -1000 -10 \$0;
 #X obj 107 20 numbers latencyOutput test-output 0 8 \$0;
 #X obj 107 40 numbers latencyInput test-input 0 8 \$0;
-#X obj 226 40 numbers maxLength max-length 1 20 \$0;
 #X obj 451 120 numbers thresholdOn thresh-on 0 100 \$0;
 #X obj 451 140 numbers thresholdOff thresh-off 0 100 \$0;
 #X obj 557 120 numbers thresholdWait1 wait4off 0 10000 \$0;
@@ -3268,6 +3267,7 @@ mono 5 9 0 10 -262144 -1 0;
 #X obj 451 40 tglctl recKillsOver overkill on off \$0;
 #X obj 557 100 tglctl autorec auto-rec on off \$0;
 #X obj 332 220 tglctl instantDuck inst on off \$0;
+#X obj 226 40 numbers maxLength max-length 1 60 \$0;
 #X coords 0 -1 1 1 662 239 2 0 0;
 #X restore 0 336 pd settings;
 #N canvas 113 114 664 640 ctl_huelle 0;
@@ -3418,7 +3418,7 @@ label \$1;
 #X coords 0 -1 1 1 101 18 2 0 0;
 #X restore 881 356 pd showmidi;
 #N canvas 66 398 472 295 info_huelle 0;
-#X obj 0 0 info/loopinfo 0;
+#X obj 0 0 info/inputOutputinfo 0;
 #X coords 0 -1 1 1 442 285 2 0 0;
 #X restore 528 34 pd info_huelle;
 #X obj 646 1 bangctl2 themeLight light \$0;
@@ -3454,7 +3454,7 @@ label \$1;
 #X obj 253 670 pipe 1002;
 #X obj 166 589 pipe 401;
 #X obj 237 613 line 127;
-#X floatatom 88 626 5 0 0 0 - - -, f 5;
+#X floatatom 88 626 5 0 0 0 - - -;
 #X msg 233 636 \; 1004-feedback_ctl \$1 \;;
 #X msg 263 591 0 200;
 #X obj 234 590 t b;
