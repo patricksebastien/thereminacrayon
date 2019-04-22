@@ -65,6 +65,11 @@ Using the UNO firmware with the dedicated software to setup the pedal. Here's th
 Preset 01:
 @TODO
 
+## BITWIG OSC
+Using http://www.mossgrabers.de/Software/Bitwig/Bitwig.html extensions you can control bitwig from pd (netsend) to bitwig via the open sound control protocol. Right now only tap tempo is bridged.
+
+https://github.com/git-moss/DrivenByMoss/wiki/Open-Sound-Control-(OSC)
+
 ## TTYMIDI
 The open theremin is configured in MIDI mode. Not using the hardware rx/tx connection, we need a way to send the serial midi to pd. The included ttymidi (fixed a problem of linkage to pthread) is doing exactly this job (read midi serial -> alsa midi -> pd).
 

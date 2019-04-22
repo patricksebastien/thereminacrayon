@@ -1,5 +1,5 @@
 #N canvas 178 99 1981 1340 10;
-#N canvas 428 75 606 426 stuff 0;
+#N canvas 428 75 606 426 stuff 1;
 #X text 52 321 creating-order in alfaloop.pd: [pd stuff] / [engine]
 / [pd pd settings] / [pd ctl_huelle] / keys_midi activ/passive / show:keys_midi
 / theme-buttons / [pd info];
@@ -86,7 +86,7 @@
 #X obj 41 186 keyctltank auto-over \$0;
 #X restore 51 64 pd keytank;
 #X restore 251 56 pd ctltanks;
-#N canvas 850 58 536 581 delay 0;
+#N canvas 850 58 536 581 delay 1;
 #X msg 52 82 0;
 #X obj 42 175 *~;
 #X obj 41 518 s~ \$0-fromDelay;
@@ -1907,11 +1907,10 @@ connect 0 0 1 0 \; pd-\$2-audioHome connect 2 0 4 0 \;;
 #X restore 251 186 pd cpu-load;
 #X obj 226 171 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#N canvas 1085 304 418 353 over 0;
+#N canvas 1085 304 418 353 over 1;
 #X obj 41 220 vd~ \$0-over;
 #X obj 41 194 line~;
 #X obj 41 266 *~;
-#X obj 51 55 delwrite~ \$0-over 10000;
 #X obj 42 30 r~ \$0-audioIn;
 #X obj 128 199 loadbang;
 #X obj 41 292 s~ \$0-overOut;
@@ -2177,21 +2176,22 @@ connect 0 0 1 0 \; pd-\$2-audioHome connect 2 0 4 0 \;;
 #X restore 225 81 pd rec_kills_autoover;
 #X text 91 143 could be usefull...;
 #X obj 118 251 sinfade;
+#X obj 51 55 delwrite~ \$0-over 60000;
 #X connect 0 0 2 0;
 #X connect 1 0 0 0;
-#X connect 2 0 6 0;
-#X connect 4 0 3 0;
-#X connect 4 0 7 0;
-#X connect 5 0 10 0;
-#X connect 8 0 12 0;
-#X connect 8 0 1 0;
-#X connect 9 0 16 0;
-#X connect 10 0 16 0;
-#X connect 12 0 11 0;
-#X connect 12 1 11 1;
-#X connect 16 0 2 1;
+#X connect 2 0 5 0;
+#X connect 3 0 6 0;
+#X connect 3 0 16 0;
+#X connect 4 0 9 0;
+#X connect 7 0 11 0;
+#X connect 7 0 1 0;
+#X connect 8 0 15 0;
+#X connect 9 0 15 0;
+#X connect 11 0 10 0;
+#X connect 11 1 10 1;
+#X connect 15 0 2 1;
 #X restore 396 160 pd over;
-#N canvas 121 240 553 350 records_to_disk 0;
+#N canvas 121 240 553 350 records_to_disk 1;
 #X obj 115 197 writesf~;
 #X msg 42 181 start;
 #X msg 69 135 stop;
@@ -3122,8 +3122,8 @@ connect 0 0 1 0 \; pd-\$2-latencyHome connect 2 0 3 0 \;;
 #N canvas 0 50 450 300 cpu_load 0;
 #X obj 100 100 cnv 12 105 14 empty \$0-settingsFont empty 108 10 0
 11 -262144 -262144 0;
-#X obj 100 101 cnv 1 10 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
-cpu:6% 111 6 0 10 -99865 -262144 0;
+#X obj 100 101 cnv 1 9 12 \$0-loadMeterCanvas \$0-loadMeterCanvasIn
+cpu:5% 111 6 0 10 -99865 -262144 0;
 #X obj 100 100 cnv 4 4 14 empty \$0-settingsFont empty 108 10 0 11
 -262144 -262144 0;
 #X obj 100 100 cnv 3 3 14 empty \$0-settingsBg empty 20 12 0 14 -99865
@@ -3221,8 +3221,8 @@ mono 5 9 0 10 -262144 -1 0;
 -99865 -262144 0;
 #X obj 8 200 hradio 38 1 0 5 \$0-hradio2recCtl empty empty 0 -8 0 10
 -262144 -1 -1 0;
-#X obj 226 60 cnv 15 210 38 empty \$0-delNowCanvas delay:27614 6 20
-0 11 -262144 -1 0;
+#X obj 226 60 cnv 15 210 38 empty \$0-delNowCanvas delay:100 6 20 0
+11 -262144 -1 0;
 #X obj 225 120 cnv 15 212 119 empty \$0-settingsBg fades(over/ducking)
 7 10 0 11 -99865 -262144 0;
 #X obj 226 160 cnv 15 210 38 empty empty empty 20 12 0 14 -262144 -66577
