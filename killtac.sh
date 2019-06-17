@@ -10,3 +10,4 @@ sudo killall /home/psc/11h11/thereminacrayon/ttymidi/ttymidi
 sudo killall /usr/bin/python
 sudo killall touchegg
 sudo killall carla
+sudo killall simplescreenrecorder
