@@ -48,8 +48,8 @@ touchegg &
 #/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
 #simplescreenrecorder --start-hidden &
 sleep 25
-wmctrl -r "Open Stage Control" -t 2 &
-wmctrl -r "TimeMachine" -t 3 &
+wmctrl -r "Open Stage Control" -t 1 &
+wmctrl -r "TimeMachine" -t 2 &
 wmctrl -r "Gem" -t 1 &
 wmctrl -r "vatVideo.pd" -t 1 &
 wmctrl -r "main.pd" -t 4 &
