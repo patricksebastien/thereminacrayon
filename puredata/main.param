@@ -5,19 +5,9 @@
 /noisegate2/attack float 100;
 /noisegate2/decay float 100;
 /eq3/low list 1;
-/eq3/mid list 0.95;
-/eq3/high list 0.83;
+/eq3/mid list 1;
+/eq3/high list 1;
 /sfi-help/samples clear;
-/sfi-help/samples list 0 ../../samples/jap.wav;
-/sfi-help/samples list 1 ../../samples/mia.wav;
-/sfi-help/samples list 2 ../../samples/random/yourintelligence.wav;
-/sfi-help/samples list 3 ../../samples/random/kalimba.wav;
-/sfi-help/samples list 4 ../../samples/random/dish.wav;
-/sampleFiler/samples clear;
-/sdrum/samples clear;
-/sdrum/samples list 0 ../../samples/kicks/WAV/01 Traditional Kicks/trad_kick_01_C.wav
-;
-/sdrum/samples list 1 ../../samples/kicks/WAV/02 Minimal Kicks/min_kick_01_C.wav
-;
-/sdrum/samples list 2 ../../samples/kicks/WAV/03 Subby Kicks/sub_kick_01_C.wav
-;
+/sfi-help/samples list 0 ../../samples/applause.wav;
+/sfi-help/samples list 1 ../../samples/french.wav;
+/sfi-help/samples list 2 ../../samples/royal-air.wav;
