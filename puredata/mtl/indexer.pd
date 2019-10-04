@@ -1,4 +1,4 @@
-#N canvas 1 82 1018 661 10;
+#N canvas 333 336 1018 661 10;
 #X obj 344 420 cyclone/coll;
 #C restore;
 #X obj 77 -19 inlet try_to_add;
@@ -118,7 +118,6 @@
 #X connect 44 0 52 1;
 #X connect 46 0 47 0;
 #X connect 46 1 44 0;
-#X connect 47 0 45 0;
 #X connect 48 0 29 0;
 #X connect 48 1 49 0;
 #X connect 48 2 32 0;

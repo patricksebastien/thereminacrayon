@@ -36,16 +36,18 @@ void loop() {
   outbound.beginPacket("tac");
 
   // Simple piezo drum trigger (on shoe)
+  /*
   uint16_t value = analogRead(A5);
   if ((value >= triggerThreshold) && millis() > (lastHitHappened + noHitFor)) {
     lastHitHappened = millis();
     outbound.addInt(1);
   } else {
     outbound.addInt(0);
-  }
+  }*/
+  outbound.addInt(0);
   uint16_t tmode = digitalRead(0);
   outbound.addByte(tmode);
-  if(tmode) {
+  //if(tmode) {
       outbound.addInt(analogRead(A0));
       outbound.addInt(analogRead(A1));
       outbound.addInt(analogRead(A2));
@@ -55,7 +57,7 @@ void loop() {
         outbound.addInt(digitalRead(i));
       }
     
-   }
+   //}
    outbound.streamPacket(&Serial);
    Serial.flush();
 }

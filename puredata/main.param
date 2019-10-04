@@ -11,3 +11,12 @@
 /sfi-help/samples list 0 ../../samples/applause.wav;
 /sfi-help/samples list 1 ../../samples/french.wav;
 /sfi-help/samples list 2 ../../samples/royal-air.wav;
+/slice/samples clear;
+/slice/samples list 0 ../../samples/slice/heBigLebowski.wav;
+/slice/samples list 1 ../../samples/slice/pulpe.wav;
+/slice/samples list 2 ../../samples/slice/mus/2.wav;
+/slice/samples list 3 ../../samples/slice/mus/3.wav;
+/slice/samples list 4 ../../samples/slice/mus/4.wav;
+/slice/samples list 5 ../../samples/slice/mus/5.wav;
+/slice/samples list 6 ../../samples/slice/mus/6.wav;
+/slice/samples list 7 ../../samples/slice/mus/7.wav;
