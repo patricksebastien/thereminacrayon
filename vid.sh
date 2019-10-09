@@ -35,7 +35,7 @@ sudo killall modem-manager # I don't have a modem
 sudo modprobe snd-hrtimer # Load the ALSA high res timer for my MIDI stuff
 sudo modprobe snd_virmidi midi_devs=1 &
 #sudo modprobe snd_virmidi &
-bitwig-studio &
+#bitwig-studio &
 #flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
 #krita --nosplash /home/psc/11h11/thereminacrayon/krita/tac.kra &
 #open-stage-control --send 127.0.0.1:8001 --osc-port 9000 --theme dark alt-buttons responsive-fonts --load /home/psc/11h11/thereminacrayon/openstagecontrol/pd_ostagec.json --fullscreen &
@@ -45,7 +45,7 @@ touchegg &
 /home/psc/11h11/thereminacrayon/xinputOSC.sh &
 #/home/psc/11h11/thereminacrayon/spAccel.py &
 /home/psc/11h11/pd049/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
-#/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
+/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
 #simplescreenrecorder --start-hidden &
 sleep 46
 #wmctrl -r "Open Stage Control" -t 1 &
