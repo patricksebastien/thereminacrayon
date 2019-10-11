@@ -47,7 +47,7 @@ touchegg &
 /home/psc/11h11/pd049/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
 #/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
 #simplescreenrecorder --start-hidden &
-sleep 46
+sleep 39
 #wmctrl -r "Open Stage Control" -t 1 &
 wmctrl -r "TimeMachine" -t 3 &
 #wmctrl -r "Gem" -t 1 &
