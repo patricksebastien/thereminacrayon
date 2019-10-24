@@ -1,11 +1,22 @@
 #TODO
-#set intel turbo to 1
+set intel turbo to 1
 #cat /sys/devices/system/cpu/intel_pstate/no_turbo
 #TRY with ^ 1 above and:
 freq=3300000; for cpu_num in {0..3}; do sudo cpufreq-set --cpu "$cpu_num" --governor performance --max "$freq" --min "$freq"; done
 #OR ^ 0 above and same freq...
 #you can use ubuntustudio-controls to set no_turbo
 # GO
+sudo /usr/bin/nmcli networking off
+sudo killall xfce4-volumed
+sudo killall nm-applet
+sudo killall /usr/bin/python3
+sudo killall /usr/lib/gvfs/gvfs-udisks2-volume-monitor
+sudo killall /usr/lib/gvfs/gvfs-afc-volume-monitor
+sudo killall /usr/lib/policykit-1-gnome/polkit-gnome-authentication-age
+sudo killall /usr/lib/gvfs/gvfs-mtp-volume-monitor
+sudo killall /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
+sudo killall /usr/lib/gvfs/gvfs-goa-volume-monitor
+sudo killall Thunar
 sudo killall a2jmidid
 sudo killall /opt/bitwig-studio/bin/BitwigStudio
 sudo killall pd
@@ -42,7 +53,7 @@ bitwig-studio &
 timemachine -f wav -p /home/psc/11h11/recording/ &
 #carla /home/psc/11h11/thereminacrayon/carla/carla.carxp &
 touchegg &
-/home/psc/11h11/thereminacrayon/xinputOSC.sh &
+#/home/psc/11h11/thereminacrayon/xinputOSC.sh &
 #/home/psc/11h11/thereminacrayon/spAccel.py &
 /home/psc/11h11/pd049/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
 #/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
@@ -53,7 +64,7 @@ wmctrl -r "TimeMachine" -t 3 &
 #wmctrl -r "Gem" -t 1 &
 #wmctrl -r "vatVideo.pd" -t 1 &
 wmctrl -r "main.pd" -t 0 &
-/home/psc/11h11/thereminacrayon/ttymidi/ttymidi -s /dev/ttyACM1 &
+#/home/psc/11h11/thereminacrayon/ttymidi/ttymidi -s /dev/ttyACM1 &
 #wmctrl -r "krita" -t 2 &
 wmctrl -r main.pd -b toggle,fullscreen &
 #wmctrl -r "Carla" -t 2 &
