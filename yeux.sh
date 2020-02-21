@@ -60,19 +60,20 @@ touchegg &
 /home/psc/11h11/pd0502/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/vat/vatAudio.pd &
 sleep 1
 /home/psc/11h11/pd0502/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
-sleep 39
+phasex &
+sleep 10
 #wmctrl -r "Open Stage Control" -t 1 &
 wmctrl -r "TimeMachine" -t 1 &
 #wmctrl -r "Gem" -t 4 &
 #wmctrl -r "vatVideo.pd" -t 3 &
 #wmctrl -r "main.pd" -t 2 &
-#wmctrl -r "krita" -t 2 &
+wmctrl -r "phasex" -t 3 &
 #wmctrl -r main.pd -b toggle,fullscreen &
 #GIMP
 #wmctrl -r tac.xcf -t 1 &
 #wmctrl -r tac.xcf -b toggle,fullscreen &
 #xinput set-prop "NTRG0001:01 1B96:1B05 Pen Pen (0)" 'Coordinate Transformation Matrix' 1.0, 0.0, 0.0, 0.0, 1.222815534, -0.11821359, 0.0, 0.0, 1.0 &
 #xrandr -s 1920x1080
-xrandr --auto --output HDMI-1 --mode 1920x1080 --right-of eDP-1
+xrandr --auto --output HDMI-1 --mode 1440x900 --right-of eDP-1
 XID=$(xinput list --id-only 'NTRG0001:01 1B96:1B05')
 xinput map-to-output $XID eDP-1

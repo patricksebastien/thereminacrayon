@@ -1,103 +1,107 @@
 <!DOCTYPE patchbay>
 <patchbay version="0.4.5" name="patchbay">
  <output-sockets>
-  <socket exclusive="off" client="Seaboard RISE" type="alsa-midi" name="Seaboard RISE 1">
+  <socket exclusive="off" name="Seaboard RISE 1" client="Seaboard RISE" type="alsa-midi">
    <plug>Seaboard RISE MIDI 1</plug>
   </socket>
-  <socket exclusive="off" client="padKONTROL" type="alsa-midi" name="padKONTROL 1">
+  <socket exclusive="off" name="padKONTROL 1" client="padKONTROL" type="alsa-midi">
    <plug>padKONTROL MIDI 2</plug>
   </socket>
-  <socket exclusive="off" client="padKONTROL" type="alsa-midi" name="padKONTROL 2">
+  <socket exclusive="off" name="padKONTROL 2" client="padKONTROL" type="alsa-midi">
    <plug>padKONTROL MIDI 1</plug>
   </socket>
-  <socket exclusive="off" client="padKONTROL" type="alsa-midi" name="padKONTROL 3">
+  <socket exclusive="off" name="padKONTROL 3" client="padKONTROL" type="alsa-midi">
    <plug>padKONTROL MIDI 3</plug>
   </socket>
-  <socket exclusive="off" client="Pure Data" type="alsa-midi" name="Pure Data 1">
+  <socket exclusive="off" name="Pure Data 1" client="Pure Data" type="alsa-midi">
    <plug>Pure Data Midi-Out 1</plug>
   </socket>
-  <socket exclusive="off" client="UA-25EX" type="alsa-midi" name="UA-25EX 1">
+  <socket exclusive="off" name="UA-25EX 1" client="UA-25EX" type="alsa-midi">
    <plug>UA-25EX MIDI 1</plug>
   </socket>
-  <socket exclusive="off" client="UMC204HD 192k" type="alsa-midi" name="UMC204HD 192k 1">
+  <socket exclusive="off" name="UMC204HD 192k 1" client="UMC204HD 192k" type="alsa-midi">
    <plug>UMC204HD 192k MIDI 1</plug>
   </socket>
-  <socket exclusive="off" client="Carla" type="jack-audio" name="Carla 1">
+  <socket exclusive="off" name="Carla 1" client="Carla" type="jack-audio">
    <plug>audio-out1</plug>
   </socket>
-  <socket exclusive="off" client="pure_data" type="jack-audio" name="pure_data 1">
+  <socket exclusive="off" name="pure_data 1" client="pure_data" type="jack-audio">
    <plug>output0</plug>
    <plug>output1</plug>
   </socket>
-  <socket exclusive="off" client="Carla" type="jack-audio" name="Carla 2">
+  <socket exclusive="off" name="Carla 2" client="Carla" type="jack-audio">
    <plug>audio-out2</plug>
   </socket>
-  <socket exclusive="off" client="Bitwig Studio" type="jack-audio" name="Bitwig Studio 1">
+  <socket exclusive="off" name="Bitwig Studio 1" client="Bitwig Studio" type="jack-audio">
    <plug>Speakers-L</plug>
   </socket>
-  <socket exclusive="off" client="Bitwig Studio" type="jack-audio" name="Bitwig Studio 2">
+  <socket exclusive="off" name="Bitwig Studio 2" client="Bitwig Studio" type="jack-audio">
    <plug>Speakers-R</plug>
   </socket>
  </output-sockets>
  <input-sockets>
-  <socket exclusive="off" client="Virtual Raw MIDI 3-0" type="alsa-midi" name="Virtual Raw MIDI 3- 1">
+  <socket exclusive="off" name="phasex 1" client="phasex" type="alsa-midi">
+   <plug>phasex in</plug>
+  </socket>
+  <socket exclusive="off" name="Virtual Raw MIDI 3- 1" client="Virtual Raw MIDI 3-0" type="alsa-midi">
    <plug>VirMIDI 3-0</plug>
   </socket>
-  <socket exclusive="off" client="Virtual Raw MIDI 4-0" type="alsa-midi" name="Virtual Raw MIDI 4- 1">
+  <socket exclusive="off" name="Virtual Raw MIDI 4- 1" client="Virtual Raw MIDI 4-0" type="alsa-midi">
    <plug>VirMIDI 4-0</plug>
   </socket>
-  <socket exclusive="off" client="TimeMachine" type="jack-audio" name="TimeMachine 1">
+  <socket exclusive="off" name="TimeMachine 1" client="TimeMachine" type="jack-audio">
    <plug>in_1</plug>
    <plug>in_2</plug>
   </socket>
-  <socket exclusive="off" client="pure_data" type="jack-audio" name="pure_data 3">
+  <socket exclusive="off" name="pure_data 3" client="pure_data" type="jack-audio">
    <plug>input4</plug>
   </socket>
-  <socket exclusive="off" client="pure_data" type="jack-audio" name="pure_data 4">
+  <socket exclusive="off" name="pure_data 4" client="pure_data" type="jack-audio">
    <plug>input5</plug>
   </socket>
-  <socket exclusive="off" client="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24:0" type="alsa-midi" name="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1">
+  <socket exclusive="off" name="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1" client="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24:0" type="alsa-midi">
    <plug>Seaboard RISE:Seaboard RISE MIDI 1 24:0</plug>
   </socket>
-  <socket exclusive="off" client="Virtual Raw MIDI 6-2" type="alsa-midi" name="Virtual Raw MIDI 6- 1">
+  <socket exclusive="off" name="Virtual Raw MIDI 6- 1" client="Virtual Raw MIDI 6-2" type="alsa-midi">
    <plug>VirMIDI 6-2</plug>
   </socket>
-  <socket exclusive="off" client="Virtual Raw MIDI 6-0" type="alsa-midi" name="Virtual Raw MIDI 6- real1">
+  <socket exclusive="off" name="Virtual Raw MIDI 6- real1" client="Virtual Raw MIDI 6-0" type="alsa-midi">
    <plug>VirMIDI 6-0</plug>
   </socket>
-  <socket exclusive="off" client="Pure Data" type="alsa-midi" name="Pure Data 1">
+  <socket exclusive="off" name="Pure Data 1" client="Pure Data" type="alsa-midi">
    <plug>Pure Data Midi-In 1</plug>
   </socket>
-  <socket exclusive="off" client="padKONTROL" type="alsa-midi" name="padKONTROL 1">
+  <socket exclusive="off" name="padKONTROL 1" client="padKONTROL" type="alsa-midi">
    <plug>padKONTROL MIDI 1</plug>
    <plug>padKONTROL MIDI 2</plug>
   </socket>
-  <socket exclusive="off" client="padKONTROL" type="alsa-midi" name="padKONTROL 2">
+  <socket exclusive="off" name="padKONTROL 2" client="padKONTROL" type="alsa-midi">
    <plug>padKONTROL MIDI 2</plug>
   </socket>
-  <socket exclusive="off" client="pure_data" type="jack-audio" name="pure_data 1">
+  <socket exclusive="off" name="pure_data 1" client="pure_data" type="jack-audio">
    <plug>input2</plug>
   </socket>
-  <socket exclusive="off" client="pure_data" type="jack-audio" name="pure_data 2">
+  <socket exclusive="off" name="pure_data 2" client="pure_data" type="jack-audio">
    <plug>input3</plug>
   </socket>
  </input-sockets>
  <slots/>
  <cables>
-  <cable type="alsa-midi" input="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1" output="Seaboard RISE 1"/>
-  <cable type="alsa-midi" input="Pure Data 1" output="padKONTROL 1"/>
-  <cable type="alsa-midi" input="Pure Data 1" output="padKONTROL 2"/>
-  <cable type="alsa-midi" input="Pure Data 1" output="padKONTROL 3"/>
-  <cable type="alsa-midi" input="padKONTROL 1" output="Pure Data 1"/>
-  <cable type="alsa-midi" input="padKONTROL 2" output="Pure Data 1"/>
-  <cable type="alsa-midi" input="Pure Data 1" output="UA-25EX 1"/>
-  <cable type="alsa-midi" input="Virtual Raw MIDI 6- real1" output="UMC204HD 192k 1"/>
-  <cable type="alsa-midi" input="Pure Data 1" output="UMC204HD 192k 1"/>
-  <cable type="jack-audio" input="pure_data 3" output="Carla 1"/>
-  <cable type="jack-audio" input="TimeMachine 1" output="pure_data 1"/>
-  <cable type="jack-audio" input="pure_data 4" output="Carla 2"/>
-  <cable type="jack-audio" input="pure_data 1" output="Bitwig Studio 1"/>
-  <cable type="jack-audio" input="pure_data 2" output="Bitwig Studio 2"/>
+  <cable output="Seaboard RISE 1" input="Carla:Seaboard RISE:Seaboard RISE MIDI 1 24: 1" type="alsa-midi"/>
+  <cable output="Seaboard RISE 1" input="phasex 1" type="alsa-midi"/>
+  <cable output="padKONTROL 1" input="Pure Data 1" type="alsa-midi"/>
+  <cable output="padKONTROL 2" input="Pure Data 1" type="alsa-midi"/>
+  <cable output="padKONTROL 3" input="Pure Data 1" type="alsa-midi"/>
+  <cable output="Pure Data 1" input="padKONTROL 1" type="alsa-midi"/>
+  <cable output="Pure Data 1" input="padKONTROL 2" type="alsa-midi"/>
+  <cable output="UA-25EX 1" input="Pure Data 1" type="alsa-midi"/>
+  <cable output="UMC204HD 192k 1" input="Virtual Raw MIDI 6- real1" type="alsa-midi"/>
+  <cable output="UMC204HD 192k 1" input="Pure Data 1" type="alsa-midi"/>
+  <cable output="Carla 1" input="pure_data 3" type="jack-audio"/>
+  <cable output="pure_data 1" input="TimeMachine 1" type="jack-audio"/>
+  <cable output="Carla 2" input="pure_data 4" type="jack-audio"/>
+  <cable output="Bitwig Studio 1" input="pure_data 1" type="jack-audio"/>
+  <cable output="Bitwig Studio 2" input="pure_data 2" type="jack-audio"/>
  </cables>
 </patchbay>
 
