@@ -6,6 +6,11 @@ freq=3300000; for cpu_num in {0..3}; do sudo cpufreq-set --cpu "$cpu_num" --gove
 #OR ^ 0 above and same freq...
 #you can use ubuntustudio-controls to set no_turbo
 # GO
+
+#PULSEAUDIO!!! 7% cpu
+systemctl --user stop pulseaudio.socket
+systemctl --user stop pulseaudio.service
+
 sudo /usr/bin/nmcli networking on
 sudo killall xfce4-volumed
 sudo killall nm-applet
@@ -17,7 +22,7 @@ sudo killall /usr/lib/gvfs/gvfs-mtp-volume-monitor
 sudo killall /usr/lib/gvfs/gvfs-gphoto2-volume-monitor
 sudo killall /usr/lib/gvfs/gvfs-goa-volume-monitor
 sudo killall Thunar
-sudo killall a2jmidid
+#sudo killall a2jmidid
 sudo killall /opt/bitwig-studio/bin/BitwigStudio
 sudo killall pd
 sudo killall bitwig
@@ -45,6 +50,9 @@ sudo /etc/init.d/cups stop & # Stop cups, I don't use a printer when making musi
 sudo killall modem-manager # I don't have a modem
 sudo modprobe snd-hrtimer # Load the ALSA high res timer for my MIDI stuff
 sudo modprobe snd_virmidi midi_devs=1 &
+#a2jmidid -e &
+sooperlooper -L /home/psc/11h11/thereminacrayon/sooperlooper/tac.slsess &
+#guitarix -L &
 #sudo modprobe snd_virmidi &
 bitwig-studio &
 #flatpak run org.gimp.GIMP//stable /home/psc/11h11/thereminacrayon/gimp/tac.xcf &
@@ -56,18 +64,22 @@ touchegg &
 #/home/psc/11h11/thereminacrayon/xinputOSC.sh &
 #/home/psc/11h11/thereminacrayon/spAccel.py &
 #lingot &
-/home/psc/11h11/pd0502/bin/pd -rt -jack -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
+/home/psc/11h11/pd0502/bin/pd -rt -jack -nojackconnect -channels 6 -alsamidi -mididev 1 -open /home/psc/11h11/thereminacrayon/puredata/main.pd &
 #/home/psc/11h11/pd049/bin/pd -nrt -noaudio /home/psc/11h11/vat/vatVideo.pd &
 #simplescreenrecorder --start-hidden &
-sleep 39
+slgui &
+sleep 29
 #wmctrl -r "Open Stage Control" -t 1 &
-wmctrl -r "TimeMachine" -t 1 &
+wmctrl -r "TimeMachine" -t 4 &
 #wmctrl -r "Gem" -t 1 &
 #wmctrl -r "vatVideo.pd" -t 1 &
 wmctrl -r "main.pd" -t 2 &
 #/home/psc/11h11/thereminacrayon/ttymidi/ttymidi -s /dev/ttyACM1 &
 #wmctrl -r "krita" -t 2 &
 wmctrl -r main.pd -b toggle,fullscreen &
+#wmctrl -r "Guitarix: gx_head" -t 3 &
+wmctrl -r "SooperLooper" -t 0 &
+#wmctrl -r "Guitarix: gx_head" -b toggle,fullscreen &
 #wmctrl -r "Carla" -t 2 &
 #GIMP
 #wmctrl -r tac.xcf -t 1 &
